@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1778215631714917375.html"
 	],
 	prefix: "",
 	theme: {
@@ -61,12 +62,27 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				brand: {
+					primary: '#01696f',
+					bg: '#f7f6f2',
+					surface: '#f9f8f5',
+					text: '#28251d',
+					muted: '#7a7974',
+					'accent-soft': '#cedcd8',
+					border: '#e4e2dc',
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				card: '16px',
+				btn: '9999px',
+			},
+			fontFamily: {
+				display: ['Playfair Display', 'Georgia', 'serif'],
+				body: ['Inter', 'system-ui', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {
