@@ -5,6 +5,7 @@ import Audience from "@/components/sections/Audience";
 import Results from "@/components/sections/Results";
 import Program from "@/components/sections/Program";
 import Mentors from "@/components/sections/Mentors";
+import Gallery from "@/components/sections/Gallery";
 import Testimonials from "@/components/sections/Testimonials";
 import Pricing from "@/components/sections/Pricing";
 import CtaBanner from "@/components/sections/CtaBanner";
@@ -22,6 +23,7 @@ const Index = () => {
         <Results />
         <Program />
         <Mentors />
+        <Gallery />
         <Testimonials />
         <Pricing />
         <CtaBanner />

@@ -64,13 +64,17 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				brand: {
-					primary: '#01696f',
-					bg: '#f7f6f2',
-					surface: '#f9f8f5',
-					text: '#28251d',
-					muted: '#7a7974',
-					'accent-soft': '#cedcd8',
-					border: '#e4e2dc',
+					bg:       '#0d1f1a',
+					card:     '#111f1b',
+					deep:     '#0a1714',
+					surface:  '#162320',
+					text:     '#f5ead8',
+					muted:    '#8aaa9a',
+					gold:     '#c9a84c',
+					'gold-light': '#e4c97e',
+					'gold-dim':   '#7a5e22',
+					border:   '#1f3530',
+					black:    '#080e0c',
 				}
 			},
 			borderRadius: {

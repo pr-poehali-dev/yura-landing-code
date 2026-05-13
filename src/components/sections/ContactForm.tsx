@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const goals = [
-  "Снизить долг",
-  "Начать инвестировать",
-  "Купить жильё",
-  "Планировать пенсию",
-  "Другое",
-];
+const goals = ["Снизить долг", "Начать инвестировать", "Купить жильё", "Планировать пенсию", "Другое"];
+
+const inputStyle = {
+  backgroundColor: "var(--brand-surface)",
+  borderColor: "var(--brand-border)",
+  color: "var(--brand-text)",
+  outline: "none",
+};
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", phone: "", city: "", goal: "", message: "" });
@@ -22,21 +23,24 @@ export default function ContactForm() {
     setSent(true);
   };
 
+  const fieldClass = "w-full px-4 py-3 rounded-[12px] border font-body text-sm transition-colors focus:ring-1";
+
   return (
-    <section id="form" className="section-padding bg-brand-bg">
+    <section id="form" className="section-padding" style={{ backgroundColor: "var(--brand-bg)" }}>
       <div className="container-brand">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-4xl mx-auto">
 
           <div className="space-y-6">
             <div>
-              <p className="font-body text-xs font-medium uppercase tracking-widest text-brand-primary mb-3">
+              <span className="gold-line mb-4" />
+              <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
                 Записаться
               </p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-text leading-tight">
+              <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: "var(--brand-text)" }}>
                 Оставить заявку
               </h2>
             </div>
-            <p className="font-body text-base text-brand-muted leading-relaxed">
+            <p className="font-body text-base leading-relaxed" style={{ color: "var(--brand-muted)" }}>
               Укажите вашу ситуацию, и мы подберем формат участия, который подойдет именно вам.
             </p>
             <div className="space-y-4">
@@ -46,91 +50,101 @@ export default function ContactForm() {
                 { icon: "MessageCircle", text: "Без навязчивых звонков" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-accent-soft flex items-center justify-center">
-                    <Icon name={item.icon as "Clock"} size={14} className="text-brand-primary" />
+                  <div
+                    className="w-8 h-8 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: "rgba(201,168,76,0.12)" }}
+                  >
+                    <Icon name={item.icon as "Clock"} size={14} style={{ color: "var(--brand-gold)" }} />
                   </div>
-                  <span className="font-body text-sm text-brand-text">{item.text}</span>
+                  <span className="font-body text-sm" style={{ color: "var(--brand-text)" }}>{item.text}</span>
                 </div>
               ))}
             </div>
           </div>
 
           <div
-            className="p-7 rounded-card bg-white border border-brand-border"
-            style={{ boxShadow: "0 4px 24px 0 rgba(40,37,29,0.08)" }}
+            className="p-7 rounded-card border"
+            style={{
+              backgroundColor: "var(--brand-bg-card)",
+              borderColor: "var(--brand-gold-dim)",
+              boxShadow: "0 4px 32px 0 rgba(0,0,0,0.4)",
+            }}
           >
             {sent ? (
               <div className="text-center py-8 space-y-4">
-                <div className="w-14 h-14 rounded-full bg-brand-accent-soft flex items-center justify-center mx-auto">
-                  <Icon name="Check" size={24} className="text-brand-primary" />
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center mx-auto"
+                  style={{ backgroundColor: "rgba(201,168,76,0.15)" }}
+                >
+                  <Icon name="Check" size={24} style={{ color: "var(--brand-gold)" }} />
                 </div>
-                <h3 className="font-display text-xl font-semibold text-brand-text">Заявка отправлена!</h3>
-                <p className="font-body text-sm text-brand-muted">
+                <h3 className="font-display text-xl font-semibold" style={{ color: "var(--brand-text)" }}>
+                  Заявка отправлена!
+                </h3>
+                <p className="font-body text-sm" style={{ color: "var(--brand-muted)" }}>
                   Свяжемся с вами в ближайшее время и расскажем о следующих шагах.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {[
+                  { name: "name", label: "Имя *", type: "text", placeholder: "Ваше имя", required: true },
+                  { name: "phone", label: "Телефон *", type: "tel", placeholder: "+7 (___) ___-__-__", required: true },
+                  { name: "city", label: "Город", type: "text", placeholder: "Москва", required: false },
+                ].map((field) => (
+                  <div key={field.name}>
+                    <label className="block font-body text-xs font-medium mb-1.5" style={{ color: "var(--brand-muted)" }}>
+                      {field.label}
+                    </label>
+                    <input
+                      name={field.name}
+                      type={field.type}
+                      required={field.required}
+                      value={form[field.name as keyof typeof form]}
+                      onChange={handleChange}
+                      placeholder={field.placeholder}
+                      className={fieldClass}
+                      style={inputStyle}
+                    />
+                  </div>
+                ))}
+
                 <div>
-                  <label className="block font-body text-xs font-medium text-brand-text mb-1.5">Имя *</label>
-                  <input
-                    name="name"
-                    required
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="Ваше имя"
-                    className="w-full px-4 py-3 rounded-[12px] border border-brand-border bg-brand-surface font-body text-sm text-brand-text placeholder:text-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block font-body text-xs font-medium text-brand-text mb-1.5">Телефон *</label>
-                  <input
-                    name="phone"
-                    type="tel"
-                    required
-                    value={form.phone}
-                    onChange={handleChange}
-                    placeholder="+7 (___) ___-__-__"
-                    className="w-full px-4 py-3 rounded-[12px] border border-brand-border bg-brand-surface font-body text-sm text-brand-text placeholder:text-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block font-body text-xs font-medium text-brand-text mb-1.5">Город</label>
-                  <input
-                    name="city"
-                    value={form.city}
-                    onChange={handleChange}
-                    placeholder="Москва"
-                    className="w-full px-4 py-3 rounded-[12px] border border-brand-border bg-brand-surface font-body text-sm text-brand-text placeholder:text-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block font-body text-xs font-medium text-brand-text mb-1.5">Ваша главная цель *</label>
+                  <label className="block font-body text-xs font-medium mb-1.5" style={{ color: "var(--brand-muted)" }}>
+                    Ваша главная цель *
+                  </label>
                   <select
                     name="goal"
                     required
                     value={form.goal}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-[12px] border border-brand-border bg-brand-surface font-body text-sm text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary transition-colors appearance-none"
+                    className={fieldClass + " appearance-none"}
+                    style={inputStyle}
                   >
                     <option value="">Выберите цель</option>
                     {goals.map((g) => <option key={g} value={g}>{g}</option>)}
                   </select>
                 </div>
+
                 <div>
-                  <label className="block font-body text-xs font-medium text-brand-text mb-1.5">Дополнительно</label>
+                  <label className="block font-body text-xs font-medium mb-1.5" style={{ color: "var(--brand-muted)" }}>
+                    Дополнительно
+                  </label>
                   <textarea
                     name="message"
                     value={form.message}
                     onChange={handleChange}
                     rows={3}
                     placeholder="Расскажите о вашей ситуации…"
-                    className="w-full px-4 py-3 rounded-[12px] border border-brand-border bg-brand-surface font-body text-sm text-brand-text placeholder:text-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary transition-colors resize-none"
+                    className={fieldClass + " resize-none"}
+                    style={inputStyle}
                   />
                 </div>
+
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-btn bg-brand-primary text-white text-sm font-medium font-body hover:bg-[#015a5f] transition-colors duration-200"
+                  className="w-full py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+                  style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
                 >
                   Отправить заявку
                 </button>

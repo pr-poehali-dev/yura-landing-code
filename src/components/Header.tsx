@@ -4,7 +4,6 @@ import Icon from "@/components/ui/icon";
 const navLinks = [
   { label: "О курсе", href: "#about" },
   { label: "Программа", href: "#program" },
-  { label: "Формат", href: "#format" },
   { label: "Тарифы", href: "#pricing" },
   { label: "Преподаватели", href: "#mentors" },
 ];
@@ -22,17 +21,16 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-brand-border"
-          : "bg-transparent"
+        scrolled ? "border-b border-brand-border" : ""
       }`}
+      style={{
+        backgroundColor: scrolled ? "rgba(10,23,20,0.96)" : "transparent",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+      }}
     >
       <div className="container-brand">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a
-            href="#"
-            className="font-display font-semibold text-brand-text text-sm md:text-base leading-tight max-w-[200px] md:max-w-none"
-          >
+          <a href="#" className="font-display font-semibold text-brand-text text-sm md:text-base leading-tight">
             Программа создания<br className="hidden sm:block" /> капитала
           </a>
 
@@ -41,7 +39,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-body text-brand-muted hover:text-brand-primary transition-colors duration-200"
+                className="text-sm font-body text-brand-muted hover:text-brand-gold transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -51,11 +49,11 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href="#pricing"
-              className="hidden md:inline-flex items-center px-5 py-2.5 rounded-btn bg-brand-primary text-white text-sm font-medium hover:bg-[#015a5f] transition-colors duration-200"
+              className="hidden md:inline-flex items-center px-5 py-2.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+              style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
             >
-              Записаться на курс
+              Записаться
             </a>
-
             <button
               className="lg:hidden p-2 text-brand-text"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -68,13 +66,16 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="lg:hidden bg-white border-t border-brand-border px-6 py-4 space-y-1">
+        <div
+          className="lg:hidden border-t border-brand-border px-6 py-4 space-y-1"
+          style={{ backgroundColor: "var(--brand-bg-deep)" }}
+        >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block py-3 text-sm font-body text-brand-text border-b border-brand-border last:border-0 hover:text-brand-primary transition-colors"
+              className="block py-3 text-sm font-body text-brand-text border-b border-brand-border last:border-0 hover:text-brand-gold transition-colors"
             >
               {link.label}
             </a>
@@ -82,7 +83,8 @@ export default function Header() {
           <a
             href="#pricing"
             onClick={() => setMenuOpen(false)}
-            className="block mt-4 text-center px-5 py-3 rounded-btn bg-brand-primary text-white text-sm font-medium"
+            className="block mt-4 text-center px-5 py-3 rounded-btn text-sm font-medium font-body"
+            style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
           >
             Записаться на курс
           </a>

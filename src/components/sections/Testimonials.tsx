@@ -17,13 +17,14 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding" style={{ backgroundColor: "var(--brand-surface)" }}>
       <div className="container-brand">
         <div className="text-center mb-12">
-          <p className="font-body text-xs font-medium uppercase tracking-widest text-brand-primary mb-3">
+          <span className="gold-line mx-auto mb-4" />
+          <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Отзывы
           </p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-text leading-tight">
+          <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: "var(--brand-text)" }}>
             Что говорят участники
           </h2>
         </div>
@@ -32,22 +33,32 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="p-7 rounded-card bg-brand-surface border border-brand-border"
-              style={{ boxShadow: "0 2px 16px 0 rgba(40,37,29,0.06)" }}
+              className="p-7 rounded-card border"
+              style={{
+                backgroundColor: "var(--brand-bg-card)",
+                borderColor: "var(--brand-border)",
+                boxShadow: "0 2px 20px 0 rgba(0,0,0,0.35)",
+              }}
             >
-              <div className="text-2xl text-brand-accent-soft mb-4 font-display">"</div>
-              <p className="font-body text-sm text-brand-text leading-relaxed mb-6 italic">
+              <div
+                className="text-3xl mb-4 font-display leading-none"
+                style={{ color: "var(--brand-gold-dim)" }}
+              >"</div>
+              <p className="font-body text-sm leading-relaxed mb-6 italic" style={{ color: "var(--brand-text)" }}>
                 {t.text}
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-brand-accent-soft flex items-center justify-center text-brand-primary font-display font-semibold text-sm">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center font-display font-semibold text-sm"
+                  style={{ backgroundColor: "rgba(201,168,76,0.15)", color: "var(--brand-gold)" }}
+                >
                   {t.initial}
                 </div>
                 <div>
-                  <p className="font-body text-sm font-medium text-brand-text">
+                  <p className="font-body text-sm font-medium" style={{ color: "var(--brand-text)" }}>
                     {t.name}{t.city ? `, ${t.city}` : ""}
                   </p>
-                  <p className="font-body text-xs text-brand-muted">{t.role}</p>
+                  <p className="font-body text-xs" style={{ color: "var(--brand-muted)" }}>{t.role}</p>
                 </div>
               </div>
             </div>
