@@ -3,6 +3,8 @@ import Icon from "@/components/ui/icon";
 const mentors = [
   {
     name: "Надежда Коргун",
+    photo: "https://cdn.poehali.dev/projects/57473d5e-c74f-44c7-a62d-78a64b94709e/bucket/60df1a05-2b96-46dd-9c93-aa6d87a9ea35.jpg",
+    overlay: true,
     role: "Финансовый советник",
     tags: [
       "Основатель консалтинговой компании",
@@ -53,10 +55,15 @@ export default function Mentors() {
             >
               {/* Photo or placeholder as background */}
               {mentor.photo ? (
-                <div
-                  className="absolute inset-0 bg-cover"
-                  style={{ backgroundImage: `url(${mentor.photo})`, backgroundPosition: "top center", backgroundSize: "85%" }}
-                />
+                <>
+                  <div
+                    className="absolute inset-0 bg-cover"
+                    style={{ backgroundImage: `url(${mentor.photo})`, backgroundPosition: "top center", backgroundSize: "85%" }}
+                  />
+                  {mentor.overlay && (
+                    <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.45)" }} />
+                  )}
+                </>
               ) : (
                 <div
                   className="absolute inset-0 flex flex-col items-center justify-center gap-2"
