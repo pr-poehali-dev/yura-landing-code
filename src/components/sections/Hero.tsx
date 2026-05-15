@@ -40,7 +40,7 @@ export default function Hero() {
                 style={{ color: "var(--brand-text)" }}
               >
                 3 месяца{" "}
-                <span style={{ color: "var(--brand-gold)" }}>3 блока</span>{" "}
+                <span className="gold-shimmer">3 блока</span>{" "}
                 12 созвонов
               </h1>
               <p
@@ -80,8 +80,8 @@ export default function Hero() {
 
             <a
               href="#form"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
-              style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
+              className="gold-shimmer-bg inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+              style={{ color: "var(--brand-black)" }}
             >
               Записаться на консультацию
             </a>

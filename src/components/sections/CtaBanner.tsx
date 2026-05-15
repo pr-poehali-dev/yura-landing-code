@@ -23,8 +23,8 @@ export default function CtaBanner() {
         </p>
         <a
           href="#form"
-          className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
-          style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
+          className="gold-shimmer-bg inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+          style={{ color: "var(--brand-black)" }}
         >
           Записаться на курс
         </a>

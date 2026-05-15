@@ -73,8 +73,8 @@ export default function Pricing() {
             >
               {plan.popular && (
                 <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-body font-medium whitespace-nowrap"
-                  style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
+                  className="gold-shimmer-bg absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-body font-medium whitespace-nowrap"
+                  style={{ color: "var(--brand-black)" }}
                 >
                   Популярный
                 </div>
@@ -88,8 +88,8 @@ export default function Pricing() {
                   {plan.description}
                 </p>
                 <div
-                  className="font-display text-4xl font-bold mb-2"
-                  style={{ color: plan.popular ? "var(--brand-gold)" : "var(--brand-text)" }}
+                  className={`font-display text-4xl font-bold mb-2${plan.popular ? " gold-shimmer" : ""}`}
+                  style={plan.popular ? {} : { color: "var(--brand-text)" }}
                 >
                   {plan.price}
                 </div>
@@ -128,10 +128,10 @@ export default function Pricing() {
 
               <a
                 href="#form"
-                className="block text-center px-6 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+                className={`block text-center px-6 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85${plan.popular ? " gold-shimmer-bg" : ""}`}
                 style={
                   plan.popular
-                    ? { background: "var(--brand-gold)", color: "var(--brand-black)" }
+                    ? { color: "var(--brand-black)" }
                     : { background: "var(--brand-surface)", color: "var(--brand-text)", border: "1px solid var(--brand-border)" }
                 }
               >
