@@ -3,7 +3,7 @@ import Icon from "@/components/ui/icon";
 const mentors = [
   {
     name: "Надежда Коргун",
-    photo: "https://cdn.poehali.dev/projects/57473d5e-c74f-44c7-a62d-78a64b94709e/bucket/60df1a05-2b96-46dd-9c93-aa6d87a9ea35.jpg",
+    photo: "https://cdn.poehali.dev/projects/57473d5e-c74f-44c7-a62d-78a64b94709e/bucket/07a154fc-8b9f-47ff-bc20-89c31f3afd7d.png",
     role: "Финансовый советник",
     tags: [
       "Основатель консалтинговой компании",
