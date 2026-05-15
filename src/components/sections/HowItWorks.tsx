@@ -5,7 +5,7 @@ const items = [
     id: "module-1",
     icon: "BookOpen",
     title: "Три модуля",
-    description: "1. Личные финансы. 2. Финансовое планирование и построение личной стратегии. 3. Подбор и внедрение финансовых инструментов.",
+    description: "1. Личные финансы.\n2. Финансовое планирование и построение личной стратегии.\n3. Подбор и внедрение финансовых инструментов.",
   },
   {
     id: "weekly-calls",
@@ -73,7 +73,7 @@ export default function HowItWorks() {
               <h3 className="font-display text-lg font-semibold mb-2" style={{ color: "var(--brand-text)" }}>
                 {item.title}
               </h3>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+              <p className="font-body text-sm leading-relaxed whitespace-pre-line" style={{ color: "var(--brand-muted)" }}>
                 {item.description}
               </p>
             </div>
