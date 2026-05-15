@@ -1,7 +1,7 @@
 const meta = [
   { value: "3 месяца", label: "Формат" },
   { value: "3 блока", label: "Блоков" },
-  { value: "12 созвонов", label: "Созвонов" },
+  { value: "12 созвонов", label: "Сопровождение" },
 ];
 
 export default function Hero() {
