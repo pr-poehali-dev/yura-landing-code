@@ -68,21 +68,19 @@ export default function Mentors() {
                   </h3>
                   <p className="font-body text-sm" style={{ color: "var(--brand-gold)" }}>{mentor.role}</p>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <ul className="space-y-2">
                   {mentor.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full text-xs font-body border"
-                      style={{
-                        borderColor: "var(--brand-gold-dim)",
-                        color: "var(--brand-gold)",
-                        backgroundColor: "rgba(201,168,76,0.08)",
-                      }}
-                    >
-                      {tag}
-                    </span>
+                    <li key={tag} className="flex items-center gap-2.5">
+                      <span
+                        className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
+                        style={{ backgroundColor: "rgba(201,168,76,0.12)" }}
+                      >
+                        <Icon name="Check" size={11} style={{ color: "var(--brand-gold)" }} />
+                      </span>
+                      <span className="font-body text-sm" style={{ color: "var(--brand-text)" }}>{tag}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
           ))}
