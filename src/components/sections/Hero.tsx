@@ -1,16 +1,7 @@
-import Icon from "@/components/ui/icon";
-
-const stats = [
-  { label: "Длительность", value: "3 месяца" },
-  { label: "Консультации", value: "2 × 30 мин" },
-  { label: "Созвоны", value: "Еженедельно" },
-];
-
-const highlights = [
-  "3 блока обучения",
-  "2 индивидуальные консультации с наставником",
-  "Еженедельные групповые созвоны",
-  "Практика, домашние задания и сопровождение",
+const meta = [
+  { value: "3 месяца", label: "Формат" },
+  { value: "3 блока", label: "Блоков" },
+  { value: "12 созвонов", label: "Созвонов" },
 ];
 
 export default function Hero() {
@@ -19,7 +10,6 @@ export default function Hero() {
       className="relative min-h-screen flex items-center pt-20"
       style={{ backgroundColor: "var(--brand-bg)" }}
     >
-      {/* subtle radial glow */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -34,112 +24,125 @@ export default function Hero() {
           {/* left */}
           <div className="space-y-8">
             <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-btn text-xs font-medium font-body tracking-wide border"
+              className="inline-flex items-center px-4 py-1.5 rounded-btn text-xs font-medium font-body tracking-wide border"
               style={{
                 borderColor: "var(--brand-gold-dim)",
                 color: "var(--brand-gold)",
                 backgroundColor: "rgba(201,168,76,0.08)",
               }}
             >
-              3 месяца · 3 блока · 2 консультации
+              Программа создания капитала
             </div>
 
             <div className="space-y-4">
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]" style={{ color: "var(--brand-text)" }}>
-                Программа<br />
-                <span style={{ color: "var(--brand-gold)" }}>создания</span><br />
-                капитала
+              <h1
+                className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]"
+                style={{ color: "var(--brand-text)" }}
+              >
+                3 месяца{" "}
+                <span style={{ color: "var(--brand-gold)" }}>3 блока</span>{" "}
+                12 созвонов
               </h1>
-              <p className="font-body text-lg leading-relaxed max-w-lg" style={{ color: "var(--brand-muted)" }}>
-                Курс по финансовой грамотности и выстраиванию личной системы капитала за 3 месяца.
+              <p
+                className="font-body text-lg leading-relaxed max-w-lg"
+                style={{ color: "var(--brand-muted)" }}
+              >
+                Наставничество по управлению личными финансами и инвестированию
+              </p>
+              <p
+                className="font-body text-sm leading-relaxed max-w-lg"
+                style={{ color: "rgba(138,170,154,0.65)" }}
+              >
+                3-месячная программа для пошагового построения системы создания капитала.
               </p>
             </div>
 
-            <ul className="space-y-3">
-              {highlights.map((item) => (
-                <li key={item} className="flex items-start gap-3 font-body text-sm" style={{ color: "var(--brand-text)" }}>
-                  <span
-                    className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: "rgba(201,168,76,0.15)" }}
-                  >
-                    <Icon name="Check" size={11} style={{ color: "var(--brand-gold)" }} />
-                  </span>
-                  {item}
-                </li>
+            {/* meta pills */}
+            <div className="flex flex-wrap gap-3">
+              {meta.map((m) => (
+                <div
+                  key={m.value}
+                  className="px-4 py-2.5 rounded-card border text-center"
+                  style={{
+                    backgroundColor: "var(--brand-bg-card)",
+                    borderColor: "var(--brand-border)",
+                  }}
+                >
+                  <div className="font-display text-base font-semibold" style={{ color: "var(--brand-gold)" }}>
+                    {m.value}
+                  </div>
+                  <div className="font-body text-[10px] mt-0.5" style={{ color: "var(--brand-muted)" }}>
+                    {m.label}
+                  </div>
+                </div>
               ))}
-            </ul>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="#pricing"
-                className="inline-flex items-center justify-center px-7 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
-                style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
-              >
-                Записаться на курс
-              </a>
-              <a
-                href="#program"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-btn border text-sm font-medium font-body transition-colors duration-200"
-                style={{
-                  borderColor: "var(--brand-border)",
-                  color: "var(--brand-text)",
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "var(--brand-gold)";
-                  (e.currentTarget as HTMLElement).style.color = "var(--brand-gold)";
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "var(--brand-border)";
-                  (e.currentTarget as HTMLElement).style.color = "var(--brand-text)";
-                }}
-              >
-                Смотреть программу
-                <Icon name="ArrowDown" size={14} />
-              </a>
             </div>
+
+            <a
+              href="#form"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+              style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
+            >
+              Записаться на консультацию
+            </a>
           </div>
 
-          {/* right — stat cards */}
-          <div className="space-y-4">
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className="p-6 rounded-card border flex items-center justify-between"
-                style={{
-                  backgroundColor: i === 0 ? "rgba(201,168,76,0.12)" : "var(--brand-bg-card)",
-                  borderColor: i === 0 ? "var(--brand-gold-dim)" : "var(--brand-border)",
-                  boxShadow: "0 2px 20px 0 rgba(0,0,0,0.3)",
-                }}
-              >
-                <span className="font-body text-sm" style={{ color: "var(--brand-muted)" }}>{stat.label}</span>
-                <span
-                  className="font-display text-2xl font-semibold"
-                  style={{ color: i === 0 ? "var(--brand-gold)" : "var(--brand-text)" }}
-                >
-                  {stat.value}
-                </span>
-              </div>
-            ))}
+          {/* right — growth chart card */}
+          <div
+            className="p-7 rounded-card border"
+            style={{
+              backgroundColor: "var(--brand-bg-card)",
+              borderColor: "var(--brand-gold-dim)",
+              boxShadow: "0 8px 48px 0 rgba(0,0,0,0.45)",
+            }}
+          >
+            {/* chart */}
+            <div className="mb-6">
+              <svg viewBox="0 0 280 120" className="w-full" fill="none">
+                <defs>
+                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#c9a84c" stopOpacity="0.35" />
+                    <stop offset="100%" stopColor="#c9a84c" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                {/* grid lines */}
+                {[30, 60, 90].map((y) => (
+                  <line key={y} x1="0" y1={y} x2="280" y2={y} stroke="rgba(201,168,76,0.1)" strokeWidth="1" />
+                ))}
+                {/* area */}
+                <path
+                  d="M0 110 C40 100 60 90 90 75 C120 60 130 50 160 35 C190 20 220 12 280 5 L280 120 L0 120 Z"
+                  fill="url(#chartGrad)"
+                />
+                {/* line */}
+                <path
+                  d="M0 110 C40 100 60 90 90 75 C120 60 130 50 160 35 C190 20 220 12 280 5"
+                  stroke="#c9a84c"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                {/* dots */}
+                {[
+                  [0, 110], [90, 75], [160, 35], [280, 5],
+                ].map(([cx, cy]) => (
+                  <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3.5" fill="#c9a84c" />
+                ))}
+              </svg>
+            </div>
 
+            {/* text */}
             <div
-              className="p-6 rounded-card border"
-              style={{
-                backgroundColor: "var(--brand-surface)",
-                borderColor: "var(--brand-border)",
-                boxShadow: "0 2px 20px 0 rgba(0,0,0,0.3)",
-              }}
+              className="pt-5 border-t space-y-2"
+              style={{ borderColor: "var(--brand-border)" }}
             >
-              <div className="flex items-center gap-3 mb-3">
-                <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "rgba(201,168,76,0.15)" }}
-                >
-                  <Icon name="Star" size={14} style={{ color: "var(--brand-gold)" }} />
-                </div>
-                <span className="font-body text-sm font-medium" style={{ color: "var(--brand-text)" }}>Ведут курс</span>
-              </div>
-              <p className="font-body text-sm" style={{ color: "var(--brand-muted)" }}>
-                Надежда Коргун и Анастасия Прус — финансовые советники с практическим опытом сопровождения клиентов.
+              <p
+                className="font-display text-base font-semibold leading-snug"
+                style={{ color: "var(--brand-text)" }}
+              >
+                Для создания капитала нужна цепочка небольших, но постоянных действий.
+              </p>
+              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+                Ее легче встроить вместе с опытным специалистом.
               </p>
             </div>
           </div>
