@@ -1,21 +1,43 @@
-const blocks = [
+import Icon from "@/components/ui/icon";
+
+const modules = [
   {
-    step: "Блок 1",
+    step: "Модуль 1",
     title: "Управление личными финансами и мышление",
     description: "Разберете, как устроены личные деньги, где теряются ресурсы и какие поведенческие установки мешают росту капитала.",
-    topics: ["Доходы, расходы и денежные привычки", "Финансовая дисциплина", "Мышление, влияющее на деньги", "Ошибки, которые тормозят накопление", "Базовые принципы личной финансовой устойчивости"],
+    items: [
+      "Знакомимся со своим бюджетом",
+      "Создаем правильный учет",
+      "Убираем утечки денег",
+      "Распределяем по фондам",
+      "Находим дельту",
+      "Оптимизируем категории",
+      "Работаем с мышлением и тем, как видим свои деньги",
+    ],
   },
   {
-    step: "Блок 2",
+    step: "Модуль 2",
     title: "Финансовое планирование и цели",
     description: "Научитесь ставить реалистичные финансовые цели, строить план движения к ним и управлять бюджетом осознанно.",
-    topics: ["Постановка финансовых целей", "Личный бюджет и распределение денег", "Подушка безопасности и резервный фонд", "Планирование крупных покупок", "Работа с долгами и кредитами"],
+    items: [
+      "Ставим реалистичные финансовые цели и рассчитываем их точно",
+      "Создаем карту целей",
+      "Строим личный финансовый план под каждую цель",
+      "Снижаем кредитную нагрузку",
+    ],
   },
   {
-    step: "Блок 3",
+    step: "Модуль 3",
     title: "Инструменты и создание капитала",
     description: "Познакомитесь с финансовыми инструментами, поймете, как начать инвестировать и выстроить систему роста капитала.",
-    topics: ["Обзор инвестиционных инструментов", "Банковские продукты и вклады", "Ценные бумаги и фондовый рынок", "Страховые и накопительные продукты", "Составление личной инвестиционной стратегии"],
+    items: [
+      "Принципы работы финансовых инструментов",
+      "Изучаем рынок инструментов",
+      "Банковская система: кредиты, депозиты, карты",
+      "Пенсионные программы",
+      "Программы по защите жизни и здоровья, поиск выгодных вариантов",
+      "Рынок ценных бумаг: от готовых решений до самостоятельного инвестирования",
+    ],
   },
 ];
 
@@ -23,28 +45,31 @@ export default function Program() {
   return (
     <section id="program" className="section-padding" style={{ backgroundColor: "var(--brand-surface)" }}>
       <div className="container-brand">
-        <div className="text-center mb-12">
-          <span className="gold-line mx-auto mb-4" />
+        <div className="mb-12 max-w-3xl">
+          <span className="gold-line mb-4" />
           <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Программа курса
           </p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight max-w-2xl mx-auto" style={{ color: "var(--brand-text)" }}>
-            Три блока, которые собирают личную систему капитала
+          <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "var(--brand-text)" }}>
+            Программа курса
           </h2>
+          <p className="font-body text-base leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+            Три модуля, которые помогают перейти от финансового хаоса к понятной системе управления деньгами и созданию капитала.
+          </p>
         </div>
 
         <div className="space-y-5">
-          {blocks.map((block, i) => (
+          {modules.map((mod, i) => (
             <div
-              key={block.step}
-              className="grid md:grid-cols-[200px_1fr] gap-6 p-6 md:p-8 rounded-card border"
+              key={mod.step}
+              className="p-6 md:p-8 rounded-card border"
               style={{
                 backgroundColor: "var(--brand-bg-card)",
-                borderColor: "var(--brand-border)",
+                borderColor: i === 0 ? "var(--brand-gold-dim)" : "var(--brand-border)",
                 boxShadow: "0 2px 20px 0 rgba(0,0,0,0.35)",
               }}
             >
-              <div className="space-y-2">
+              <div className="flex items-center gap-3 mb-4">
                 <div
                   className="inline-flex items-center px-3 py-1 rounded-full text-xs font-body font-medium"
                   style={
@@ -53,43 +78,48 @@ export default function Program() {
                       : { background: "rgba(201,168,76,0.12)", color: "var(--brand-gold)" }
                   }
                 >
-                  {block.step}
-                </div>
-                <div
-                  className="text-4xl font-display font-bold select-none"
-                  style={{ color: "rgba(201,168,76,0.12)" }}
-                >
-                  {String(i + 1).padStart(2, "0")}
+                  {mod.step}
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="grid md:grid-cols-[1fr_1fr] gap-6 md:gap-10">
                 <div>
                   <h3 className="font-display text-xl font-semibold mb-2" style={{ color: "var(--brand-text)" }}>
-                    {block.title}
+                    {mod.title}
                   </h3>
                   <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-muted)" }}>
-                    {block.description}
+                    {mod.description}
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {block.topics.map((topic) => (
-                    <span
-                      key={topic}
-                      className="px-3 py-1.5 rounded-full text-xs font-body border"
-                      style={{
-                        borderColor: "var(--brand-border)",
-                        color: "var(--brand-muted)",
-                        backgroundColor: "var(--brand-surface)",
-                      }}
-                    >
-                      {topic}
-                    </span>
+
+                <ul className="space-y-2">
+                  {mod.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <span
+                        className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
+                        style={{ backgroundColor: "rgba(201,168,76,0.12)" }}
+                      >
+                        <Icon name="Check" size={11} style={{ color: "var(--brand-gold)" }} />
+                      </span>
+                      <span className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-text)" }}>
+                        {item}
+                      </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10">
+          <a
+            href="#form"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+            style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
+          >
+            Записаться на консультацию
+          </a>
         </div>
       </div>
     </section>
