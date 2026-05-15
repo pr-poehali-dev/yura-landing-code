@@ -54,8 +54,8 @@ export default function Mentors() {
               {/* Photo or placeholder as background */}
               {mentor.photo ? (
                 <div
-                  className="absolute inset-0 bg-cover bg-top"
-                  style={{ backgroundImage: `url(${mentor.photo})` }}
+                  className="absolute inset-0 bg-cover"
+                  style={{ backgroundImage: `url(${mentor.photo})`, backgroundPosition: "top center", backgroundSize: "85%" }}
                 />
               ) : (
                 <div
