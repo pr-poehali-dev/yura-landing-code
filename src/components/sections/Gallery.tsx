@@ -13,15 +13,15 @@ export default function Gallery() {
   return (
     <section id="format" className="section-padding" style={{ backgroundColor: "var(--brand-bg-deep)" }}>
       <div className="container-brand">
-        <div className="text-center mb-12">
-          <span className="gold-line mx-auto mb-4" />
+        <div className="mb-12">
+          <span className="gold-line mb-4" />
           <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Как проходит обучение
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: "var(--brand-text)" }}>
             Фотографии с мероприятий
           </h2>
-          <p className="font-body text-sm mt-3 max-w-lg mx-auto" style={{ color: "var(--brand-muted)" }}>
+          <p className="font-body text-sm mt-3 max-w-lg" style={{ color: "var(--brand-muted)" }}>
             Живые встречи, групповые разборы и индивидуальные сессии с наставниками
           </p>
         </div>

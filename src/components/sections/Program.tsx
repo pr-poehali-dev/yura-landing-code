@@ -45,8 +45,8 @@ export default function Program() {
   return (
     <section id="program" className="section-padding" style={{ backgroundColor: "var(--brand-surface)" }}>
       <div className="container-brand">
-        <div className="mb-12 max-w-3xl mx-auto text-center">
-          <span className="gold-line mx-auto mb-4" />
+        <div className="mb-12 max-w-3xl">
+          <span className="gold-line mb-4" />
           <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Формат
           </p>

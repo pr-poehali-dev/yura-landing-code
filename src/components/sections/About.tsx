@@ -2,9 +2,9 @@ export default function About() {
   return (
     <section id="about" className="section-padding" style={{ backgroundColor: "var(--brand-surface)" }}>
       <div className="container-brand">
-        <div className="max-w-2xl mx-auto text-center space-y-6">
+        <div className="max-w-2xl space-y-6">
           <div>
-            <span className="gold-line mx-auto mb-4" />
+            <span className="gold-line mb-4" />
             <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
               О курсе
             </p>

@@ -34,8 +34,8 @@ export default function Pricing() {
   return (
     <section id="pricing" className="section-padding" style={{ backgroundColor: "var(--brand-bg-deep)" }}>
       <div className="container-brand">
-        <div className="text-center mb-12">
-          <span className="gold-line mx-auto mb-4" />
+        <div className="mb-12">
+          <span className="gold-line mb-4" />
           <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Тарифы
           </p>

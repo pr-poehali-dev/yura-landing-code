@@ -11,12 +11,12 @@ export default function Results() {
   return (
     <section className="section-padding" style={{ backgroundColor: "var(--brand-bg-deep)" }}>
       <div className="container-brand">
-        <div className="text-center mb-12">
-          <span className="gold-line mx-auto mb-4" />
+        <div className="mb-12">
+          <span className="gold-line mb-4" />
           <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Результат обучения
           </p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight max-w-2xl mx-auto" style={{ color: "var(--brand-text)" }}>
+          <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight max-w-2xl" style={{ color: "var(--brand-text)" }}>
             Что будет у участника после курса
           </h2>
         </div>
