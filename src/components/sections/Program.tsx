@@ -51,7 +51,7 @@ export default function Program() {
             Формат
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "var(--brand-text)" }}>
-            Формат
+            Программа курса
           </h2>
           <p className="font-body text-base leading-relaxed" style={{ color: "var(--brand-muted)" }}>
             Три модуля, которые помогают перейти от финансового хаоса к понятной системе управления деньгами и созданию капитала.
