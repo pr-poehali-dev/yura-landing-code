@@ -44,31 +44,33 @@ export default function Mentors() {
           {mentors.map((mentor) => (
             <div
               key={mentor.name}
-              className="rounded-card border overflow-hidden"
+              className="rounded-card border overflow-hidden relative flex flex-col"
               style={{
-                backgroundColor: "var(--brand-bg-card)",
                 borderColor: "var(--brand-gold-dim)",
                 boxShadow: "0 4px 32px 0 rgba(0,0,0,0.4)",
+                minHeight: 480,
               }}
             >
-              {/* Photo */}
+              {/* Photo or placeholder as background */}
               {mentor.photo ? (
-                <img
-                  src={mentor.photo}
-                  alt={mentor.name}
-                  className="w-full object-cover object-top"
-                  style={{ height: 260 }}
+                <div
+                  className="absolute inset-0 bg-cover bg-top"
+                  style={{ backgroundImage: `url(${mentor.photo})` }}
                 />
               ) : (
-                <div className="photo-placeholder w-full" style={{ height: 260 }}>
+                <div
+                  className="absolute inset-0 flex flex-col items-center justify-center gap-2"
+                  style={{ backgroundColor: "var(--brand-bg-card)" }}
+                >
                   <Icon name="Camera" size={28} style={{ color: "var(--brand-gold-dim)" }} />
-                  <span>Фото преподавателя</span>
-                  <span className="text-[10px] opacity-60">Загрузите фото {mentor.name}</span>
+                  <span className="text-xs" style={{ color: "var(--brand-gold-dim)" }}>Загрузите фото {mentor.name}</span>
                 </div>
               )}
 
-              {/* Info */}
-              <div className="p-6 space-y-4">
+              {/* Gradient overlay + Info at bottom */}
+              <div className="relative mt-auto p-6 space-y-4" style={{
+                background: "linear-gradient(to top, rgba(10,10,10,0.97) 60%, rgba(10,10,10,0.7) 85%, transparent 100%)",
+              }}>
                 <div>
                   <h3 className="font-display text-xl font-semibold" style={{ color: "var(--brand-text)" }}>
                     {mentor.name}
