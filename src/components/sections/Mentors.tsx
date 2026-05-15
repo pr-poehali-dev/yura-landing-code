@@ -15,7 +15,7 @@ const mentors = [
   },
   {
     name: "Анастасия Прус",
-    photo: "https://cdn.poehali.dev/projects/57473d5e-c74f-44c7-a62d-78a64b94709e/bucket/f18c94c5-9064-4779-a77d-31df03c081da.JPG",
+    photo: "https://cdn.poehali.dev/projects/57473d5e-c74f-44c7-a62d-78a64b94709e/bucket/7638fc71-7707-4421-a304-824fe7967076.png",
     role: "Финансовый советник",
     tags: [
       "Экономист",
