@@ -14,6 +14,7 @@ const mentors = [
   },
   {
     name: "Анастасия Прус",
+    photo: "https://cdn.poehali.dev/projects/57473d5e-c74f-44c7-a62d-78a64b94709e/bucket/f18c94c5-9064-4779-a77d-31df03c081da.JPG",
     role: "Финансовый советник",
     tags: [
       "Экономист",
@@ -50,15 +51,21 @@ export default function Mentors() {
                 boxShadow: "0 4px 32px 0 rgba(0,0,0,0.4)",
               }}
             >
-              {/* Photo placeholder */}
-              <div
-                className="photo-placeholder w-full"
-                style={{ height: 260 }}
-              >
-                <Icon name="Camera" size={28} style={{ color: "var(--brand-gold-dim)" }} />
-                <span>Фото преподавателя</span>
-                <span className="text-[10px] opacity-60">Загрузите фото {mentor.name}</span>
-              </div>
+              {/* Photo */}
+              {mentor.photo ? (
+                <img
+                  src={mentor.photo}
+                  alt={mentor.name}
+                  className="w-full object-cover object-top"
+                  style={{ height: 260 }}
+                />
+              ) : (
+                <div className="photo-placeholder w-full" style={{ height: 260 }}>
+                  <Icon name="Camera" size={28} style={{ color: "var(--brand-gold-dim)" }} />
+                  <span>Фото преподавателя</span>
+                  <span className="text-[10px] opacity-60">Загрузите фото {mentor.name}</span>
+                </div>
+              )}
 
               {/* Info */}
               <div className="p-6 space-y-4">
