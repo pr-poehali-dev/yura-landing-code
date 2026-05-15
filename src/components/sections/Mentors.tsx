@@ -4,7 +4,6 @@ const mentors = [
   {
     name: "Надежда Коргун",
     photo: "https://cdn.poehali.dev/projects/57473d5e-c74f-44c7-a62d-78a64b94709e/bucket/60df1a05-2b96-46dd-9c93-aa6d87a9ea35.jpg",
-    overlay: true,
     role: "Финансовый советник",
     tags: [
       "Основатель консалтинговой компании",
@@ -58,11 +57,8 @@ export default function Mentors() {
                 <>
                   <div
                     className="absolute inset-0 bg-cover"
-                    style={{ backgroundImage: `url(${mentor.photo})`, backgroundPosition: "top center", backgroundSize: "85%" }}
+                    style={{ backgroundImage: `url(${mentor.photo})`, backgroundPosition: "10% 5%", backgroundSize: "cover" }}
                   />
-                  {mentor.overlay && (
-                    <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.45)" }} />
-                  )}
                 </>
               ) : (
                 <div
