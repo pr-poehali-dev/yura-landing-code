@@ -3,29 +3,43 @@ import Icon from "@/components/ui/icon";
 const plans = [
   {
     name: "Базовый",
-    price: "39 900 ₽",
+    price: "12 500 ₽",
     description: "Доступ к материалам курса и групповому формату",
+    spots: "20 мест",
+    popular: false,
     features: [
       "3 блока обучения",
       "Еженедельные групповые созвоны",
-      "Домашние задания с проверкой",
-      "Доступ к закрытому сообществу",
+      "Доступ к сообществу",
     ],
-    popular: false,
     cta: "Выбрать тариф",
   },
   {
-    name: "С наставником",
-    price: "59 900 ₽",
+    name: "Оптимальный",
+    price: "28 500 ₽",
     description: "Полное сопровождение с личными консультациями",
+    spots: "10 мест",
+    popular: true,
     features: [
       "Всё из Базового",
-      "2 индивидуальные консультации × 30 мин",
+      "2 индивидуальные консультации в начале и в конце обучения",
       "Персональная обратная связь по ДЗ",
       "Личный финансовый план",
       "Поддержка в чате с наставником",
     ],
-    popular: true,
+    cta: "Выбрать тариф",
+  },
+  {
+    name: "Премиум",
+    price: "98 500 ₽",
+    description: "Индивидуальное сопровождение и доступ к закрытым эфирам",
+    spots: "2 места",
+    popular: false,
+    features: [
+      "Каждую неделю индивидуальная консультация",
+      "Личный куратор всё время обучения",
+    ],
+    pending: "Здесь будут ещё пункты, думаем над наполнением",
     cta: "Выбрать тариф",
   },
 ];
@@ -44,11 +58,11 @@ export default function Pricing() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className="relative p-7 rounded-card border"
+              className="relative p-7 rounded-card border flex flex-col"
               style={{
                 backgroundColor: plan.popular ? "rgba(201,168,76,0.07)" : "var(--brand-bg-card)",
                 borderColor: plan.popular ? "var(--brand-gold)" : "var(--brand-border)",
@@ -59,7 +73,7 @@ export default function Pricing() {
             >
               {plan.popular && (
                 <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-body font-medium"
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-body font-medium whitespace-nowrap"
                   style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
                 >
                   Популярный
@@ -74,14 +88,20 @@ export default function Pricing() {
                   {plan.description}
                 </p>
                 <div
-                  className="font-display text-4xl font-bold"
+                  className="font-display text-4xl font-bold mb-2"
                   style={{ color: plan.popular ? "var(--brand-gold)" : "var(--brand-text)" }}
                 >
                   {plan.price}
                 </div>
+                <span
+                  className="inline-block font-body text-xs px-2.5 py-1 rounded-full"
+                  style={{ backgroundColor: "rgba(201,168,76,0.1)", color: "var(--brand-gold)" }}
+                >
+                  {plan.spots}
+                </span>
               </div>
 
-              <ul className="space-y-3 mb-7">
+              <ul className="space-y-3 mb-7 flex-1">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-3">
                     <span
@@ -93,6 +113,17 @@ export default function Pricing() {
                     <span className="font-body text-sm" style={{ color: "var(--brand-text)" }}>{f}</span>
                   </li>
                 ))}
+                {plan.pending && (
+                  <li className="flex items-start gap-3">
+                    <span
+                      className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
+                      style={{ backgroundColor: "rgba(201,168,76,0.07)" }}
+                    >
+                      <Icon name="Clock" size={11} style={{ color: "var(--brand-gold-dim)" }} />
+                    </span>
+                    <span className="font-body text-sm italic" style={{ color: "var(--brand-muted)" }}>{plan.pending}</span>
+                  </li>
+                )}
               </ul>
 
               <a
@@ -110,7 +141,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="text-center font-body text-xs mt-6" style={{ color: "var(--brand-muted)" }}>
+        <p className="font-body text-xs mt-6" style={{ color: "var(--brand-muted)" }}>
           Возможна оплата в рассрочку. Уточните детали при записи.
         </p>
       </div>
