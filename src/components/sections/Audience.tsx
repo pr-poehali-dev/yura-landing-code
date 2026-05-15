@@ -18,10 +18,10 @@ export default function Audience() {
         <div className="mb-12 max-w-3xl">
           <span className="gold-line mb-4" />
           <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
-            Для кого программа
+            О программе
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "var(--brand-text)" }}>
-            Для кого эта программа
+            Для кого подойдёт
           </h2>
           <p className="font-body text-base leading-relaxed mb-2" style={{ color: "var(--brand-muted)" }}>
             Подойдет тем, кто готов погрузиться и начать действовать — точно, а не наугад, без конца теряя деньги.
