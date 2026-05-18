@@ -27,25 +27,27 @@ export default function Results() {
           {results.map((item, i) => (
             <div
               key={item.title}
-              className="p-6 rounded-card border"
+              className="flex items-start gap-4 p-6 rounded-card border"
               style={{
                 backgroundColor: i === 0 ? "rgba(201,168,76,0.1)" : "var(--brand-bg-card)",
                 borderColor: i === 0 ? "var(--brand-gold-dim)" : "var(--brand-border)",
                 boxShadow: "0 2px 20px 0 rgba(0,0,0,0.35)",
               }}
             >
-              <div className="mb-4">
-                <item.Icon size={44} />
+              <div className="flex-shrink-0 mt-0.5">
+                <item.Icon size={36} opacity={0.85} />
               </div>
-              <h3
-                className="font-display text-lg font-semibold mb-2"
-                style={{ color: i === 0 ? "var(--brand-gold)" : "var(--brand-text)" }}
-              >
-                {item.title}
-              </h3>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-muted)" }}>
-                {item.description}
-              </p>
+              <div>
+                <h3
+                  className="font-display text-lg font-semibold mb-2"
+                  style={{ color: i === 0 ? "var(--brand-gold)" : "var(--brand-text)" }}
+                >
+                  {item.title}
+                </h3>
+                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+                  {item.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
