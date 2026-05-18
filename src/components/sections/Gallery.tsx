@@ -15,13 +15,13 @@ export default function Gallery() {
       <div className="container-brand">
         <div className="mb-12">
           <span className="gold-line mb-4" />
-          <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
+          <p className="font-body text-sm font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Как проходит обучение
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: "var(--brand-text)" }}>
             Фотографии с мероприятий
           </h2>
-          <p className="font-body text-sm mt-3 max-w-lg" style={{ color: "var(--brand-muted)" }}>
+          <p className="font-body text-base mt-3 max-w-lg" style={{ color: "var(--brand-muted)" }}>
             Живые встречи, групповые разборы и индивидуальные сессии с наставниками
           </p>
         </div>
@@ -34,7 +34,7 @@ export default function Gallery() {
             style={{ height: 320 }}
           >
             <Icon name="Image" size={36} style={{ color: "var(--brand-gold-dim)" }} />
-            <span className="text-sm">Фото мероприятия</span>
+            <span className="text-base">Фото мероприятия</span>
             <span className="text-[11px] opacity-55">Главное фото — рекомендуется 1200×640</span>
           </div>
 

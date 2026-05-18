@@ -30,7 +30,7 @@ export default function Header() {
     >
       <div className="container-brand">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" className="font-display font-semibold text-brand-text text-sm md:text-base leading-tight">
+          <a href="#" className="font-display font-semibold text-brand-text text-base md:text-lg leading-tight">
             Программа создания<br className="hidden sm:block" /> капитала
           </a>
 
@@ -39,7 +39,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-body text-brand-muted hover:text-brand-gold transition-colors duration-200"
+                className="text-base font-body text-brand-muted hover:text-brand-gold transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -49,7 +49,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href="#pricing"
-              className="hidden md:inline-flex items-center px-5 py-2.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+              className="hidden md:inline-flex items-center px-5 py-2.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
               style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
             >
               Записаться
@@ -75,7 +75,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block py-3 text-sm font-body text-brand-text border-b border-brand-border last:border-0 hover:text-brand-gold transition-colors"
+              className="block py-3 text-base font-body text-brand-text border-b border-brand-border last:border-0 hover:text-brand-gold transition-colors"
             >
               {link.label}
             </a>
@@ -83,7 +83,7 @@ export default function Header() {
           <a
             href="#pricing"
             onClick={() => setMenuOpen(false)}
-            className="block mt-4 text-center px-5 py-3 rounded-btn text-sm font-medium font-body"
+            className="block mt-4 text-center px-5 py-3 rounded-btn text-base font-medium font-body"
             style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
           >
             Записаться на курс

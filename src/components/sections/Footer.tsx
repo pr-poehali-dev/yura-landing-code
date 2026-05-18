@@ -12,10 +12,10 @@ export default function Footer() {
       <div className="container-brand">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-8">
           <div>
-            <p className="font-display font-semibold text-base mb-1" style={{ color: "var(--brand-gold)" }}>
+            <p className="font-display font-semibold text-lg mb-1" style={{ color: "var(--brand-gold)" }}>
               Программа создания капитала
             </p>
-            <p className="font-body text-sm" style={{ color: "rgba(138,170,154,0.5)" }}>
+            <p className="font-body text-base" style={{ color: "rgba(138,170,154,0.5)" }}>
               Финансовая грамотность и создание капитала за 3 месяца
             </p>
           </div>
@@ -25,7 +25,7 @@ export default function Footer() {
               <a
                 key={l.href}
                 href={l.href}
-                className="font-body text-sm transition-colors"
+                className="font-body text-base transition-colors"
                 style={{ color: "rgba(138,170,154,0.5)" }}
                 onMouseEnter={e => (e.currentTarget.style.color = "var(--brand-gold)")}
                 onMouseLeave={e => (e.currentTarget.style.color = "rgba(138,170,154,0.5)")}
@@ -40,14 +40,14 @@ export default function Footer() {
           className="border-t pt-6 flex flex-col md:flex-row items-center justify-between gap-4"
           style={{ borderColor: "rgba(31,53,48,0.8)" }}
         >
-          <p className="font-body text-xs" style={{ color: "rgba(138,170,154,0.3)" }}>
+          <p className="font-body text-sm" style={{ color: "rgba(138,170,154,0.3)" }}>
             © 2026 Программа создания капитала. Все права защищены.
           </p>
           <a
             href="https://t.me/anastasiya_prus"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-body text-xs transition-colors"
+            className="font-body text-sm transition-colors"
             style={{ color: "rgba(138,170,154,0.4)" }}
             onMouseEnter={e => (e.currentTarget.style.color = "var(--brand-gold)")}
             onMouseLeave={e => (e.currentTarget.style.color = "rgba(138,170,154,0.4)")}

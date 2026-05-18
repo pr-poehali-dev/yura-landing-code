@@ -33,13 +33,13 @@ export default function HowItWorks() {
       <div className="container-brand">
         <div className="mb-12 max-w-3xl">
           <span className="gold-line mb-4" />
-          <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
+          <p className="font-body text-sm font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Формат
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "var(--brand-text)" }}>
             Как будет проходить обучение
           </h2>
-          <p className="font-body text-base leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+          <p className="font-body text-lg leading-relaxed" style={{ color: "var(--brand-muted)" }}>
             Пошаговый формат, в котором вы не просто получаете знания, а внедряете систему управления деньгами и создания капитала в свою жизнь.
           </p>
         </div>
@@ -70,10 +70,10 @@ export default function HowItWorks() {
                 <Icon name={item.icon as "BookOpen"} size={18} style={{ color: "var(--brand-gold)" }} />
               </div>
 
-              <h3 className="font-display text-lg font-semibold mb-2" style={{ color: "var(--brand-text)" }}>
+              <h3 className="font-display text-xl font-semibold mb-2" style={{ color: "var(--brand-text)" }}>
                 {item.title}
               </h3>
-              <p className="font-body text-sm leading-relaxed whitespace-pre-line" style={{ color: "var(--brand-muted)" }}>
+              <p className="font-body text-base leading-relaxed whitespace-pre-line" style={{ color: "var(--brand-muted)" }}>
                 {item.description}
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function HowItWorks() {
 
         <a
           href="#form"
-          className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+          className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
           style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
         >
           Записаться на консультацию

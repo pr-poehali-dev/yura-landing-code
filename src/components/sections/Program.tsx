@@ -47,13 +47,13 @@ export default function Program() {
       <div className="container-brand">
         <div className="mb-12 max-w-3xl">
           <span className="gold-line mb-4" />
-          <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
+          <p className="font-body text-sm font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Формат
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "var(--brand-text)" }}>
             Программа курса
           </h2>
-          <p className="font-body text-base leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+          <p className="font-body text-lg leading-relaxed" style={{ color: "var(--brand-muted)" }}>
             Три модуля, которые помогают перейти от финансового хаоса к понятной системе управления деньгами и созданию капитала.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function Program() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div
-                  className="inline-flex items-center px-3 py-1 rounded-full text-xs font-body font-medium"
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-body font-medium"
                   style={
                     i === 0
                       ? { background: "var(--brand-gold)", color: "var(--brand-black)" }
@@ -87,7 +87,7 @@ export default function Program() {
                   <h3 className="font-display text-xl font-semibold mb-2" style={{ color: "var(--brand-text)" }}>
                     {mod.title}
                   </h3>
-                  <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+                  <p className="font-body text-base leading-relaxed" style={{ color: "var(--brand-muted)" }}>
                     {mod.description}
                   </p>
                 </div>
@@ -101,7 +101,7 @@ export default function Program() {
                       >
                         <Icon name="Check" size={11} style={{ color: "var(--brand-gold)" }} />
                       </span>
-                      <span className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-text)" }}>
+                      <span className="font-body text-base leading-relaxed" style={{ color: "var(--brand-text)" }}>
                         {item}
                       </span>
                     </li>
@@ -115,7 +115,7 @@ export default function Program() {
         <div className="mt-10">
           <a
             href="#form"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
             style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
           >
             Записаться на консультацию

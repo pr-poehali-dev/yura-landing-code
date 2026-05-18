@@ -101,7 +101,7 @@ export default function Pricing() {
       <div className="container-brand">
         <div className="mb-12">
           <span className="gold-line mb-4" />
-          <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
+          <p className="font-body text-sm font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Тарифы
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: "var(--brand-text)" }}>
@@ -115,7 +115,7 @@ export default function Pricing() {
         >
           <div className="flex items-center gap-3 flex-1">
             <Icon name="Clock" size={18} style={{ color: "var(--brand-gold)", flexShrink: 0 }} />
-            <p className="font-body text-sm" style={{ color: "var(--brand-text)" }}>
+            <p className="font-body text-base" style={{ color: "var(--brand-text)" }}>
               <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>Цена со скидкой</span> действует при внесении предоплаты до <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>31 мая</span>
             </p>
           </div>
@@ -148,7 +148,7 @@ export default function Pricing() {
                 <h3 className="font-display text-xl font-semibold mb-1" style={{ color: "var(--brand-text)" }}>
                   {plan.name}
                 </h3>
-                <p className="font-body text-sm mb-4" style={{ color: "var(--brand-muted)" }}>
+                <p className="font-body text-base mb-4" style={{ color: "var(--brand-muted)" }}>
                   {plan.description}
                 </p>
                 {"oldPrice" in plan && (
@@ -163,7 +163,7 @@ export default function Pricing() {
                   {plan.price}
                 </div>
                 <span
-                  className="inline-block font-body text-xs px-2.5 py-1 rounded-full"
+                  className="inline-block font-body text-sm px-2.5 py-1 rounded-full"
                   style={{ backgroundColor: "rgba(201,168,76,0.1)", color: "var(--brand-gold)" }}
                 >
                   {plan.spots}
@@ -179,7 +179,7 @@ export default function Pricing() {
                     >
                       <Icon name="Check" size={11} style={{ color: "var(--brand-gold)" }} />
                     </span>
-                    <span className="font-body text-sm" style={{ color: "var(--brand-text)" }}>{f}</span>
+                    <span className="font-body text-base" style={{ color: "var(--brand-text)" }}>{f}</span>
                   </li>
                 ))}
                 {plan.pending && (
@@ -190,14 +190,14 @@ export default function Pricing() {
                     >
                       <Icon name="Clock" size={11} style={{ color: "var(--brand-gold-dim)" }} />
                     </span>
-                    <span className="font-body text-sm italic" style={{ color: "var(--brand-muted)" }}>{plan.pending}</span>
+                    <span className="font-body text-base italic" style={{ color: "var(--brand-muted)" }}>{plan.pending}</span>
                   </li>
                 )}
               </ul>
 
               <a
                 href="#form"
-                className={`block text-center px-6 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85${plan.popular ? " gold-shimmer-bg" : ""}`}
+                className={`block text-center px-6 py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85${plan.popular ? " gold-shimmer-bg" : ""}`}
                 style={
                   plan.popular
                     ? { color: "var(--brand-black)" }
@@ -210,7 +210,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="font-body text-xs mt-6" style={{ color: "var(--brand-muted)" }}>
+        <p className="font-body text-sm mt-6" style={{ color: "var(--brand-muted)" }}>
           Возможна оплата в рассрочку. Уточните детали при записи.
         </p>
       </div>

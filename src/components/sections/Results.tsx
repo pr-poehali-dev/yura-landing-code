@@ -15,7 +15,7 @@ export default function Results() {
       <div className="container-brand">
         <div className="mb-12">
           <span className="gold-line mb-4" />
-          <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
+          <p className="font-body text-sm font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Результат обучения
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight max-w-2xl" style={{ color: "var(--brand-text)" }}>
@@ -39,12 +39,12 @@ export default function Results() {
               </div>
               <div>
                 <h3
-                  className="font-display text-lg font-semibold mb-2"
+                  className="font-display text-xl font-semibold mb-2"
                   style={{ color: i === 0 ? "var(--brand-gold)" : "var(--brand-text)" }}
                 >
                   {item.title}
                 </h3>
-                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+                <p className="font-body text-base leading-relaxed" style={{ color: "var(--brand-muted)" }}>
                   {item.description}
                 </p>
               </div>

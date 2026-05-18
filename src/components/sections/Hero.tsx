@@ -26,7 +26,7 @@ export default function Hero() {
           {/* left */}
           <div className="space-y-8">
             <div
-              className="inline-flex items-center px-4 py-1.5 rounded-btn text-xs font-medium font-body tracking-wide border"
+              className="inline-flex items-center px-4 py-1.5 rounded-btn text-sm font-medium font-body tracking-wide border"
               style={{
                 borderColor: "var(--brand-gold-dim)",
                 color: "var(--brand-gold)",
@@ -46,13 +46,13 @@ export default function Hero() {
                 12 живых занятий онлайн
               </h1>
               <p
-                className="font-body text-lg leading-relaxed max-w-lg"
+                className="font-body text-xl leading-relaxed max-w-lg"
                 style={{ color: "var(--brand-muted)" }}
               >
                 Наставничество по управлению личными финансами и инвестированию
               </p>
               <p
-                className="font-body text-sm leading-relaxed max-w-lg"
+                className="font-body text-base leading-relaxed max-w-lg"
                 style={{ color: "rgba(138,170,154,0.65)" }}
               >
                 3-месячная программа для пошагового построения системы создания капитала.
@@ -72,7 +72,7 @@ export default function Hero() {
                 >
                   <m.Icon size={28} />
                   <div>
-                    <div className="font-display text-base font-semibold" style={{ color: "var(--brand-gold)" }}>
+                    <div className="font-display text-lg font-semibold" style={{ color: "var(--brand-gold)" }}>
                       {m.value}
                     </div>
                     <div className="font-body text-[10px] mt-0.5" style={{ color: "var(--brand-muted)" }}>
@@ -85,7 +85,7 @@ export default function Hero() {
 
             <a
               href="#form"
-              className="gold-shimmer-bg inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+              className="gold-shimmer-bg inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
               style={{ color: "var(--brand-black)" }}
             >
               Записаться на консультацию
@@ -133,12 +133,12 @@ export default function Hero() {
               style={{ borderColor: "var(--brand-border)" }}
             >
               <p
-                className="font-display text-base font-semibold leading-snug"
+                className="font-display text-lg font-semibold leading-snug"
                 style={{ color: "var(--brand-text)" }}
               >
                 Для создания капитала нужна цепочка небольших, но постоянных действий.
               </p>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+              <p className="font-body text-base leading-relaxed" style={{ color: "var(--brand-muted)" }}>
                 Ее легче встроить вместе с опытным специалистом.
               </p>
             </div>

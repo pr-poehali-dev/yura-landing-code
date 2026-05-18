@@ -8,7 +8,7 @@ export default function Testimonials() {
       <div className="container-brand">
         <div className="mb-12">
           <span className="gold-line mb-4" />
-          <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
+          <p className="font-body text-sm font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Отзывы
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: "var(--brand-text)" }}>
@@ -29,7 +29,7 @@ export default function Testimonials() {
               }}
             >
               <Icon name="Image" size={32} style={{ color: "var(--brand-gold-dim)" }} />
-              <p className="font-body text-sm" style={{ color: "var(--brand-muted)" }}>
+              <p className="font-body text-base" style={{ color: "var(--brand-muted)" }}>
                 Скриншот отзыва {i}
               </p>
             </div>

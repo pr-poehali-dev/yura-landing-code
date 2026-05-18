@@ -23,7 +23,7 @@ export default function ContactForm() {
     setSent(true);
   };
 
-  const fieldClass = "w-full px-4 py-3 rounded-[12px] border font-body text-sm transition-colors focus:ring-1";
+  const fieldClass = "w-full px-4 py-3 rounded-[12px] border font-body text-base transition-colors focus:ring-1";
 
   return (
     <section id="form" className="section-padding" style={{ backgroundColor: "var(--brand-bg)" }}>
@@ -33,14 +33,14 @@ export default function ContactForm() {
           <div className="space-y-6">
             <div>
               <span className="gold-line mb-4" />
-              <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
+              <p className="font-body text-sm font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
                 Записаться
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: "var(--brand-text)" }}>
                 Оставить заявку
               </h2>
             </div>
-            <p className="font-body text-base leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+            <p className="font-body text-lg leading-relaxed" style={{ color: "var(--brand-muted)" }}>
               Укажите вашу ситуацию, и мы подберем формат участия, который подойдет именно вам.
             </p>
             <div className="space-y-4">
@@ -56,7 +56,7 @@ export default function ContactForm() {
                   >
                     <Icon name={item.icon as "Clock"} size={14} style={{ color: "var(--brand-gold)" }} />
                   </div>
-                  <span className="font-body text-sm" style={{ color: "var(--brand-text)" }}>{item.text}</span>
+                  <span className="font-body text-base" style={{ color: "var(--brand-text)" }}>{item.text}</span>
                 </div>
               ))}
             </div>
@@ -81,7 +81,7 @@ export default function ContactForm() {
                 <h3 className="font-display text-xl font-semibold" style={{ color: "var(--brand-text)" }}>
                   Заявка отправлена!
                 </h3>
-                <p className="font-body text-sm" style={{ color: "var(--brand-muted)" }}>
+                <p className="font-body text-base" style={{ color: "var(--brand-muted)" }}>
                   Свяжемся с вами в ближайшее время и расскажем о следующих шагах.
                 </p>
               </div>
@@ -93,7 +93,7 @@ export default function ContactForm() {
                   { name: "city", label: "Город", type: "text", placeholder: "Москва", required: false },
                 ].map((field) => (
                   <div key={field.name}>
-                    <label className="block font-body text-xs font-medium mb-1.5" style={{ color: "var(--brand-muted)" }}>
+                    <label className="block font-body text-sm font-medium mb-1.5" style={{ color: "var(--brand-muted)" }}>
                       {field.label}
                     </label>
                     <input
@@ -110,7 +110,7 @@ export default function ContactForm() {
                 ))}
 
                 <div>
-                  <label className="block font-body text-xs font-medium mb-1.5" style={{ color: "var(--brand-muted)" }}>
+                  <label className="block font-body text-sm font-medium mb-1.5" style={{ color: "var(--brand-muted)" }}>
                     Ваша главная цель *
                   </label>
                   <select
@@ -127,7 +127,7 @@ export default function ContactForm() {
                 </div>
 
                 <div>
-                  <label className="block font-body text-xs font-medium mb-1.5" style={{ color: "var(--brand-muted)" }}>
+                  <label className="block font-body text-sm font-medium mb-1.5" style={{ color: "var(--brand-muted)" }}>
                     Дополнительно
                   </label>
                   <textarea
@@ -143,7 +143,7 @@ export default function ContactForm() {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+                  className="w-full py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
                   style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
                 >
                   Отправить заявку

@@ -33,7 +33,7 @@ export default function Mentors() {
       <div className="container-brand">
         <div className="mb-12">
           <span className="gold-line mb-4" />
-          <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
+          <p className="font-body text-sm font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             Преподаватели
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: "var(--brand-text)" }}>
@@ -78,7 +78,7 @@ export default function Mentors() {
                   <h3 className="font-display text-xl font-semibold" style={{ color: "var(--brand-text)" }}>
                     {mentor.name}
                   </h3>
-                  <p className="font-body text-sm" style={{ color: "var(--brand-gold)" }}>{mentor.role}</p>
+                  <p className="font-body text-base" style={{ color: "var(--brand-gold)" }}>{mentor.role}</p>
                 </div>
                 <ul className="space-y-2">
                   {mentor.tags.map((tag) => (
@@ -89,7 +89,7 @@ export default function Mentors() {
                       >
                         <Icon name="Check" size={11} style={{ color: "var(--brand-gold)" }} />
                       </span>
-                      <span className="font-body text-sm" style={{ color: "var(--brand-text)" }}>{tag}</span>
+                      <span className="font-body text-base" style={{ color: "var(--brand-text)" }}>{tag}</span>
                     </li>
                   ))}
                 </ul>

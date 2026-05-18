@@ -17,16 +17,16 @@ export default function Audience() {
       <div className="container-brand">
         <div className="mb-12 max-w-3xl">
           <span className="gold-line mb-4" />
-          <p className="font-body text-xs font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
+          <p className="font-body text-sm font-medium uppercase tracking-widest mb-3" style={{ color: "var(--brand-gold)" }}>
             О программе
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: "var(--brand-text)" }}>
             Для кого подойдёт
           </h2>
-          <p className="font-body text-base leading-relaxed mb-2" style={{ color: "var(--brand-muted)" }}>
+          <p className="font-body text-lg leading-relaxed mb-2" style={{ color: "var(--brand-muted)" }}>
             Подойдет тем, кто готов погрузиться и начать действовать — точно, а не наугад, без конца теряя деньги.
           </p>
-          <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(138,170,154,0.6)" }}>
+          <p className="font-body text-base leading-relaxed" style={{ color: "rgba(138,170,154,0.6)" }}>
             Программа создана для тех, кто хочет не просто больше зарабатывать, а выстроить понятную систему управления личными финансами и создания капитала.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function Audience() {
               <div className="flex-shrink-0 mt-0.5">
                 <item.Icon size={36} opacity={0.85} />
               </div>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-text)" }}>{item.text}</p>
+              <p className="font-body text-base leading-relaxed" style={{ color: "var(--brand-text)" }}>{item.text}</p>
             </div>
           ))}
         </div>
@@ -53,7 +53,7 @@ export default function Audience() {
         <div className="mt-10">
           <a
             href="#form"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
             style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
           >
             Записаться на консультацию

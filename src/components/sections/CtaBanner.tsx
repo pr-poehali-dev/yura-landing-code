@@ -20,7 +20,7 @@ export default function CtaBanner() {
         >
           Начните создавать капитал уже сегодня
         </h2>
-        <p className="font-body text-base mb-8 max-w-lg" style={{ color: "var(--brand-muted)" }}>
+        <p className="font-body text-lg mb-8 max-w-lg" style={{ color: "var(--brand-muted)" }}>
           Оставьте заявку — в течение 24 часов свяжемся с вами и расскажем, как выстроить план под ваш доход и цели.
         </p>
 
@@ -33,14 +33,14 @@ export default function CtaBanner() {
           ].map(({ Icon, label }) => (
             <div key={label} className="flex items-center gap-2.5">
               <Icon size={32} opacity={0.85} />
-              <span className="font-body text-sm" style={{ color: "var(--brand-muted)" }}>{label}</span>
+              <span className="font-body text-base" style={{ color: "var(--brand-muted)" }}>{label}</span>
             </div>
           ))}
         </div>
 
         <a
           href="#form"
-          className="gold-shimmer-bg inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-sm font-medium font-body transition-opacity hover:opacity-85"
+          className="gold-shimmer-bg inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
           style={{ color: "var(--brand-black)" }}
         >
           Записаться на курс
