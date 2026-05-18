@@ -4,6 +4,7 @@ const plans = [
   {
     name: "Базовый",
     price: "12 500 ₽",
+    oldPrice: "16 500 ₽",
     description: "Доступ к материалам курса и групповому формату",
     spots: "20 мест",
     popular: false,
@@ -17,6 +18,7 @@ const plans = [
   {
     name: "Оптимальный",
     price: "28 500 ₽",
+    oldPrice: "37 000 ₽",
     description: "Полное сопровождение с личными консультациями",
     spots: "10 мест",
     popular: true,
@@ -58,6 +60,16 @@ export default function Pricing() {
           </h2>
         </div>
 
+        <div
+          className="flex items-center gap-3 px-5 py-3.5 rounded-card border mb-8"
+          style={{ backgroundColor: "rgba(201,168,76,0.08)", borderColor: "var(--brand-gold-dim)" }}
+        >
+          <Icon name="Clock" size={18} style={{ color: "var(--brand-gold)", flexShrink: 0 }} />
+          <p className="font-body text-sm" style={{ color: "var(--brand-text)" }}>
+            <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>Цена со скидкой</span> действует при внесении предоплаты до <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>31 мая</span>
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-6">
           {plans.map((plan) => (
             <div
@@ -87,6 +99,11 @@ export default function Pricing() {
                 <p className="font-body text-sm mb-4" style={{ color: "var(--brand-muted)" }}>
                   {plan.description}
                 </p>
+                {"oldPrice" in plan && (
+                  <div className="font-body text-base line-through mb-1" style={{ color: "var(--brand-muted)" }}>
+                    {plan.oldPrice}
+                  </div>
+                )}
                 <div
                   className={`font-display text-4xl font-bold mb-2${plan.popular ? " gold-shimmer" : ""}`}
                   style={plan.popular ? {} : { color: "var(--brand-text)" }}
