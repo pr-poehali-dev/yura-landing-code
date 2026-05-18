@@ -6,48 +6,48 @@
 
 @layer base {
   :root {
-    --background: 160 30% 8%;
-    --foreground: 45 80% 90%;
+    --background: 214 60% 8%;
+    --foreground: 40 60% 90%;
 
-    --card: 160 28% 10%;
-    --card-foreground: 45 80% 90%;
+    --card: 214 55% 12%;
+    --card-foreground: 40 60% 90%;
 
-    --popover: 160 28% 10%;
-    --popover-foreground: 45 80% 90%;
+    --popover: 214 55% 12%;
+    --popover-foreground: 40 60% 90%;
 
     --primary: 43 74% 52%;
-    --primary-foreground: 160 30% 8%;
+    --primary-foreground: 214 60% 8%;
 
-    --secondary: 160 20% 16%;
-    --secondary-foreground: 45 60% 85%;
+    --secondary: 214 40% 18%;
+    --secondary-foreground: 40 50% 85%;
 
-    --muted: 160 20% 16%;
-    --muted-foreground: 160 10% 55%;
+    --muted: 214 40% 18%;
+    --muted-foreground: 214 20% 55%;
 
     --accent: 43 74% 52%;
-    --accent-foreground: 160 30% 8%;
+    --accent-foreground: 214 60% 8%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 45 80% 90%;
+    --destructive-foreground: 40 60% 90%;
 
-    --border: 160 18% 18%;
-    --input: 160 18% 18%;
+    --border: 214 35% 20%;
+    --input: 214 35% 20%;
     --ring: 43 74% 52%;
 
     --radius: 1rem;
 
     /* Brand tokens */
-    --brand-bg: #0d1f1a;
-    --brand-bg-card: #111f1b;
-    --brand-bg-deep: #0a1714;
-    --brand-surface: #162320;
-    --brand-text: #f5ead8;
-    --brand-muted: #8aaa9a;
+    --brand-bg: #07111e;
+    --brand-bg-card: #0d1a2d;
+    --brand-bg-deep: #050d18;
+    --brand-surface: #112038;
+    --brand-text: #f0e8d8;
+    --brand-muted: #7a93b0;
     --brand-gold: #c9a84c;
     --brand-gold-light: #e8d080;
     --brand-gold-dim: #7a5e22;
-    --brand-border: #1f3530;
-    --brand-black: #080e0c;
+    --brand-border: #1a2f4a;
+    --brand-black: #030810;
 
     /* Gold shimmer gradient */
     --gold-gradient: linear-gradient(
