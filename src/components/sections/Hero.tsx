@@ -87,30 +87,56 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* right — mentors photo */}
-          <div className="relative flex items-end justify-center">
-            {/* glow behind photo */}
+          {/* right — growth chart card */}
+          <div
+            className="p-7 rounded-card border"
+            style={{
+              backgroundColor: "var(--brand-bg-card)",
+              borderColor: "var(--brand-gold-dim)",
+              boxShadow: "0 8px 48px 0 rgba(0,0,0,0.45)",
+            }}
+          >
+            <div className="mb-6">
+              <svg viewBox="0 0 280 120" className="w-full" fill="none">
+                <defs>
+                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#c9a84c" stopOpacity="0.35" />
+                    <stop offset="100%" stopColor="#c9a84c" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                {[30, 60, 90].map((y) => (
+                  <line key={y} x1="0" y1={y} x2="280" y2={y} stroke="rgba(201,168,76,0.1)" strokeWidth="1" />
+                ))}
+                <path
+                  d="M0 110 C40 100 60 90 90 75 C120 60 130 50 160 35 C190 20 220 12 280 5 L280 120 L0 120 Z"
+                  fill="url(#chartGrad)"
+                />
+                <path
+                  d="M0 110 C40 100 60 90 90 75 C120 60 130 50 160 35 C190 20 220 12 280 5"
+                  stroke="#c9a84c"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                {[[0, 110], [90, 75], [160, 35], [280, 5]].map(([cx, cy]) => (
+                  <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3.5" fill="#c9a84c" />
+                ))}
+              </svg>
+            </div>
+
             <div
-              className="pointer-events-none absolute inset-0 rounded-card"
-              style={{
-                background: "radial-gradient(ellipse 80% 60% at 50% 80%, rgba(201,168,76,0.18) 0%, transparent 70%)",
-              }}
-            />
-            <img
-              src="https://cdn.poehali.dev/projects/57473d5e-c74f-44c7-a62d-78a64b94709e/bucket/4d28c53e-a2af-430a-8f2a-7b0be4e9679c.jpg"
-              alt="Наставники программы"
-              className="relative w-full rounded-card object-cover"
-              style={{
-                maxHeight: "480px",
-                border: "1px solid var(--brand-gold-dim)",
-                boxShadow: "0 8px 56px 0 rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.15)",
-              }}
-            />
-            {/* gold bottom line */}
-            <div
-              className="absolute bottom-0 left-0 right-0 h-0.5 rounded-b-card"
-              style={{ background: "var(--gold-gradient)", backgroundSize: "var(--gold-gradient-size)" }}
-            />
+              className="pt-5 border-t space-y-2"
+              style={{ borderColor: "var(--brand-border)" }}
+            >
+              <p
+                className="font-display text-base font-semibold leading-snug"
+                style={{ color: "var(--brand-text)" }}
+              >
+                Для создания капитала нужна цепочка небольших, но постоянных действий.
+              </p>
+              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-muted)" }}>
+                Ее легче встроить вместе с опытным специалистом.
+              </p>
+            </div>
           </div>
 
         </div>
