@@ -1,4 +1,53 @@
+import { useEffect, useState } from "react";
 import Icon from "@/components/ui/icon";
+
+function Countdown() {
+  const deadline = new Date("2026-05-31T23:59:59");
+
+  const calc = () => {
+    const diff = deadline.getTime() - Date.now();
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return {
+      days: Math.floor(diff / 86400000),
+      hours: Math.floor((diff % 86400000) / 3600000),
+      minutes: Math.floor((diff % 3600000) / 60000),
+      seconds: Math.floor((diff % 60000) / 1000),
+    };
+  };
+
+  const [time, setTime] = useState(calc);
+
+  useEffect(() => {
+    const id = setInterval(() => setTime(calc()), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const pad = (n: number) => String(n).padStart(2, "0");
+
+  return (
+    <div className="flex items-center gap-2">
+      {[
+        { v: time.days, l: "дней" },
+        { v: time.hours, l: "часов" },
+        { v: time.minutes, l: "минут" },
+        { v: time.seconds, l: "сек" },
+      ].map(({ v, l }, i) => (
+        <div key={l} className="flex items-center gap-2">
+          <div className="text-center">
+            <div
+              className="font-display text-2xl font-bold tabular-nums px-3 py-1.5 rounded-card"
+              style={{ color: "var(--brand-gold)", backgroundColor: "rgba(201,168,76,0.12)", minWidth: "3rem" }}
+            >
+              {pad(v)}
+            </div>
+            <div className="font-body text-[10px] mt-1" style={{ color: "var(--brand-muted)" }}>{l}</div>
+          </div>
+          {i < 3 && <span className="font-display text-xl font-bold mb-4" style={{ color: "var(--brand-gold-dim)" }}>:</span>}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 const plans = [
   {
@@ -61,13 +110,16 @@ export default function Pricing() {
         </div>
 
         <div
-          className="flex items-center gap-3 px-5 py-3.5 rounded-card border mb-8"
+          className="flex flex-col sm:flex-row sm:items-center gap-4 px-5 py-4 rounded-card border mb-8"
           style={{ backgroundColor: "rgba(201,168,76,0.08)", borderColor: "var(--brand-gold-dim)" }}
         >
-          <Icon name="Clock" size={18} style={{ color: "var(--brand-gold)", flexShrink: 0 }} />
-          <p className="font-body text-sm" style={{ color: "var(--brand-text)" }}>
-            <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>Цена со скидкой</span> действует при внесении предоплаты до <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>31 мая</span>
-          </p>
+          <div className="flex items-center gap-3 flex-1">
+            <Icon name="Clock" size={18} style={{ color: "var(--brand-gold)", flexShrink: 0 }} />
+            <p className="font-body text-sm" style={{ color: "var(--brand-text)" }}>
+              <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>Цена со скидкой</span> действует при внесении предоплаты до <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>31 мая</span>
+            </p>
+          </div>
+          <Countdown />
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
