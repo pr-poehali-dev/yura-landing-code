@@ -3,7 +3,7 @@ import { IconPiggyBank, IconCoins, IconScale } from "@/components/ui/finance-ico
 const meta = [
   { value: "3 месяца", label: "Формат", Icon: IconCoins },
   { value: "3 блока", label: "Блоков", Icon: IconScale },
-  { value: "12 созвонов", label: "Сопровождение", Icon: IconPiggyBank },
+  { value: "12 живых занятий онлайн", label: "Сопровождение", Icon: IconPiggyBank },
 ];
 
 export default function Hero() {
@@ -43,7 +43,7 @@ export default function Hero() {
               >
                 3 месяца{" "}
                 <span className="gold-shimmer">3 блока</span>{" "}
-                12 созвонов
+                12 живых занятий онлайн
               </h1>
               <p
                 className="font-body text-lg leading-relaxed max-w-lg"
