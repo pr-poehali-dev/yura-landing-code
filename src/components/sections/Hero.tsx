@@ -1,7 +1,9 @@
+import { IconPiggyBank, IconCoins, IconScale } from "@/components/ui/finance-icons";
+
 const meta = [
-  { value: "3 месяца", label: "Формат" },
-  { value: "3 блока", label: "Блоков" },
-  { value: "12 созвонов", label: "Сопровождение" },
+  { value: "3 месяца", label: "Формат", Icon: IconCoins },
+  { value: "3 блока", label: "Блоков", Icon: IconScale },
+  { value: "12 созвонов", label: "Сопровождение", Icon: IconPiggyBank },
 ];
 
 export default function Hero() {
@@ -62,17 +64,20 @@ export default function Hero() {
               {meta.map((m) => (
                 <div
                   key={m.value}
-                  className="px-4 py-2.5 rounded-card border text-center"
+                  className="flex items-center gap-3 px-4 py-2.5 rounded-card border"
                   style={{
                     backgroundColor: "var(--brand-bg-card)",
                     borderColor: "var(--brand-border)",
                   }}
                 >
-                  <div className="font-display text-base font-semibold" style={{ color: "var(--brand-gold)" }}>
-                    {m.value}
-                  </div>
-                  <div className="font-body text-[10px] mt-0.5" style={{ color: "var(--brand-muted)" }}>
-                    {m.label}
+                  <m.Icon size={28} />
+                  <div>
+                    <div className="font-display text-base font-semibold" style={{ color: "var(--brand-gold)" }}>
+                      {m.value}
+                    </div>
+                    <div className="font-body text-[10px] mt-0.5" style={{ color: "var(--brand-muted)" }}>
+                      {m.label}
+                    </div>
                   </div>
                 </div>
               ))}

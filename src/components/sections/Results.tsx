@@ -1,10 +1,12 @@
+import { IconTarget, IconLineChart, IconScale, IconWallet, IconShield, IconGrowth } from "@/components/ui/finance-icons";
+
 const results = [
-  { title: "Финансовая точка А", description: "Понимание своей текущей финансовой ситуации и реального положения дел.", icon: "📍" },
-  { title: "Личный план", description: "Пошаговый маршрут движения к капиталу с учетом ваших целей.", icon: "🗺️" },
-  { title: "Стратегия денег", description: "Понимание, как распределять деньги и на чем строить систему.", icon: "⚖️" },
-  { title: "Подходящие инструменты", description: "Ясность, какие финансовые инструменты подходят именно вам.", icon: "🔧" },
-  { title: "Уверенность в решениях", description: "Более спокойное и осознанное отношение к деньгам.", icon: "✨" },
-  { title: "База для роста", description: "Собранная основа для дальнейшего самостоятельного движения.", icon: "🌱" },
+  { title: "Финансовая точка А", description: "Понимание своей текущей финансовой ситуации и реального положения дел.", Icon: IconTarget },
+  { title: "Личный план", description: "Пошаговый маршрут движения к капиталу с учетом ваших целей.", Icon: IconLineChart },
+  { title: "Стратегия денег", description: "Понимание, как распределять деньги и на чем строить систему.", Icon: IconScale },
+  { title: "Подходящие инструменты", description: "Ясность, какие финансовые инструменты подходят именно вам.", Icon: IconWallet },
+  { title: "Уверенность в решениях", description: "Более спокойное и осознанное отношение к деньгам.", Icon: IconShield },
+  { title: "База для роста", description: "Собранная основа для дальнейшего самостоятельного движения.", Icon: IconGrowth },
 ];
 
 export default function Results() {
@@ -32,7 +34,9 @@ export default function Results() {
                 boxShadow: "0 2px 20px 0 rgba(0,0,0,0.35)",
               }}
             >
-              <div className="text-2xl mb-4">{item.icon}</div>
+              <div className="mb-4">
+                <item.Icon size={44} />
+              </div>
               <h3
                 className="font-display text-lg font-semibold mb-2"
                 style={{ color: i === 0 ? "var(--brand-gold)" : "var(--brand-text)" }}

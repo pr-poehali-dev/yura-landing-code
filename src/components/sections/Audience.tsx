@@ -1,14 +1,14 @@
-import Icon from "@/components/ui/icon";
+import { IconWallet, IconShield, IconTarget, IconBarChart, IconLineChart, IconPieChart, IconCalendar, IconCoins } from "@/components/ui/finance-icons";
 
 const items = [
-  "Ваши деньги не работают на вас. Все чаще возникает понимание, что зарабатывать и управлять — разные вещи, но как это осуществить, пока непонятно.",
-  "Вы хотите выйти из финансового хаоса и постоянных непредвиденных трат, которые раскачивают бюджет.",
-  "Вы готовы создавать капитал, но не понимаете, с чего и как начинать.",
-  "У вас уже есть накопления, и вы хотите наращивать их быстрее, чем просто на вкладах.",
-  "Вы хотите научиться ставить финансовые цели так, чтобы они действительно достигались.",
-  "Вам важно выстроить систему целиком: финансовую безопасность, выгодно растущий капитал и доступные накопления на короткие цели.",
-  "Вам нужна персональная поддержка наставника, чтобы не сойти с пути и не совершить дорогих ошибок.",
-  "Вы цените время и понимаете, что деньги с каждым годом зарабатываются все дороже, а времени до пенсии становится все меньше.",
+  { text: "Ваши деньги не работают на вас. Все чаще возникает понимание, что зарабатывать и управлять — разные вещи, но как это осуществить, пока непонятно.", Icon: IconWallet },
+  { text: "Вы хотите выйти из финансового хаоса и постоянных непредвиденных трат, которые раскачивают бюджет.", Icon: IconShield },
+  { text: "Вы готовы создавать капитал, но не понимаете, с чего и как начинать.", Icon: IconTarget },
+  { text: "У вас уже есть накопления, и вы хотите наращивать их быстрее, чем просто на вкладах.", Icon: IconBarChart },
+  { text: "Вы хотите научиться ставить финансовые цели так, чтобы они действительно достигались.", Icon: IconLineChart },
+  { text: "Вам важно выстроить систему целиком: финансовую безопасность, выгодно растущий капитал и доступные накопления на короткие цели.", Icon: IconPieChart },
+  { text: "Вам нужна персональная поддержка наставника, чтобы не сойти с пути и не совершить дорогих ошибок.", Icon: IconCalendar },
+  { text: "Вы цените время и понимаете, что деньги с каждым годом зарабатываются все дороже, а времени до пенсии становится все меньше.", Icon: IconCoins },
 ];
 
 export default function Audience() {
@@ -34,7 +34,7 @@ export default function Audience() {
         <div className="grid md:grid-cols-2 gap-4">
           {items.map((item) => (
             <div
-              key={item}
+              key={item.text}
               className="flex items-start gap-4 p-5 rounded-card border"
               style={{
                 backgroundColor: "var(--brand-bg-card)",
@@ -42,13 +42,10 @@ export default function Audience() {
                 boxShadow: "0 2px 16px 0 rgba(0,0,0,0.25)",
               }}
             >
-              <span
-                className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: "rgba(201,168,76,0.15)" }}
-              >
-                <Icon name="Check" size={13} style={{ color: "var(--brand-gold)" }} />
-              </span>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-text)" }}>{item}</p>
+              <div className="flex-shrink-0 mt-0.5">
+                <item.Icon size={36} opacity={0.85} />
+              </div>
+              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--brand-text)" }}>{item.text}</p>
             </div>
           ))}
         </div>
