@@ -36,6 +36,21 @@ export default function Hero() {
               Программа создания капитала
             </div>
 
+            <div
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-btn text-sm font-medium font-body tracking-wide border"
+              style={{
+                borderColor: "rgba(201,168,76,0.3)",
+                color: "var(--brand-text)",
+                backgroundColor: "rgba(201,168,76,0.05)",
+              }}
+            >
+              <span
+                className="w-2 h-2 rounded-full flex-shrink-0"
+                style={{ backgroundColor: "var(--brand-gold)" }}
+              />
+              Старт программы — <span style={{ color: "var(--brand-gold)" }}>15 июня</span>
+            </div>
+
             <div className="space-y-4">
               <h1
                 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]"
