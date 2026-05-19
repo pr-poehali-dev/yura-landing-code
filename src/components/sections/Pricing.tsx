@@ -110,6 +110,14 @@ export default function Pricing() {
         </div>
 
         <div
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-btn border mb-4 font-body text-sm font-medium"
+          style={{ borderColor: "rgba(201,168,76,0.3)", color: "var(--brand-text)", backgroundColor: "rgba(201,168,76,0.05)" }}
+        >
+          <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--brand-gold)" }} />
+          Старт программы — <span style={{ color: "var(--brand-gold)" }}>15 июня</span>
+        </div>
+
+        <div
           className="flex flex-col sm:flex-row sm:items-center gap-4 px-5 py-4 rounded-card border mb-8"
           style={{ backgroundColor: "rgba(201,168,76,0.08)", borderColor: "var(--brand-gold-dim)" }}
         >
