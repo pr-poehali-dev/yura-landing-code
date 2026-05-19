@@ -53,7 +53,7 @@ export default function Audience() {
         <div className="mt-10">
           <a
             href="#form"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
+            className="inline-flex items-center justify-center px-9 py-4 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
             style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
           >
             Записаться на консультацию

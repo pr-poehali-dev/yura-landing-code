@@ -197,7 +197,7 @@ export default function Pricing() {
 
               <a
                 href="#form"
-                className={`block text-center px-6 py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85${plan.popular ? " gold-shimmer-bg" : ""}`}
+                className={`block text-center px-7 py-4 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85${plan.popular ? " gold-shimmer-bg" : ""}`}
                 style={
                   plan.popular
                     ? { color: "var(--brand-black)" }

@@ -49,7 +49,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href="#pricing"
-              className="hidden md:inline-flex items-center px-5 py-2.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
+              className="hidden md:inline-flex items-center px-6 py-3 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
               style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
             >
               Записаться
@@ -83,7 +83,7 @@ export default function Header() {
           <a
             href="#pricing"
             onClick={() => setMenuOpen(false)}
-            className="block mt-4 text-center px-5 py-3 rounded-btn text-base font-medium font-body"
+            className="block mt-4 text-center px-6 py-3.5 rounded-btn text-base font-medium font-body"
             style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
           >
             Записаться на курс

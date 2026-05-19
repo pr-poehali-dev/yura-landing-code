@@ -40,7 +40,7 @@ export default function CtaBanner() {
 
         <a
           href="#form"
-          className="gold-shimmer-bg inline-flex items-center justify-center px-8 py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
+          className="gold-shimmer-bg inline-flex items-center justify-center px-9 py-4 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
           style={{ color: "var(--brand-black)" }}
         >
           Записаться на курс

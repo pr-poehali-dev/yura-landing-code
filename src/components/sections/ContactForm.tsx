@@ -143,7 +143,7 @@ export default function ContactForm() {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
+                  className="w-full py-4 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
                   style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
                 >
                   Отправить заявку
