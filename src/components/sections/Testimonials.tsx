@@ -21,13 +21,23 @@ const screenshots = [
   { url: "https://cdn.poehali.dev/files/68b354ab-8c22-4c37-a182-6e5c2089e88a.png" },
 ];
 
-const COLS = 3;
-
 export default function Testimonials() {
+  const [current, setCurrent] = useState(0);
   const [lightbox, setLightbox] = useState<number | null>(null);
+
+  const prev = () => setCurrent((c) => (c - 1 + screenshots.length) % screenshots.length);
+  const next = () => setCurrent((c) => (c + 1) % screenshots.length);
 
   const prevLight = () => setLightbox((c) => ((c ?? 0) - 1 + screenshots.length) % screenshots.length);
   const nextLight = () => setLightbox((c) => ((c ?? 0) + 1) % screenshots.length);
+
+  const getVisible = () => {
+    const indices = [];
+    for (let i = -1; i <= 1; i++) {
+      indices.push((current + i + screenshots.length) % screenshots.length);
+    }
+    return indices;
+  };
 
   return (
     <section className="section-padding" style={{ backgroundColor: "var(--brand-surface)" }}>
@@ -42,21 +52,60 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        <div className={`grid grid-cols-2 md:grid-cols-${COLS} gap-3 md:gap-4`}>
-          {screenshots.map((s, idx) => (
-            <div
+        {/* Carousel */}
+        <div className="relative">
+          <div className="flex items-center gap-3 md:gap-4 overflow-hidden">
+            {getVisible().map((idx, pos) => (
+              <div
+                key={idx}
+                className="relative rounded-card overflow-hidden flex-shrink-0 cursor-pointer transition-all duration-300"
+                style={{
+                  width: pos === 1 ? "calc(60% - 8px)" : "calc(20% - 8px)",
+                  opacity: pos === 1 ? 1 : 0.45,
+                  filter: pos === 1 ? "none" : "brightness(0.5)",
+                  border: "1px solid var(--brand-border)",
+                }}
+                onClick={() => pos === 1 ? setLightbox(idx) : (pos === 0 ? prev() : next())}
+              >
+                <img
+                  src={screenshots[idx].url}
+                  alt={`Отзыв ${idx + 1}`}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={prev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full flex items-center justify-center"
+            style={{ backgroundColor: "var(--brand-gold)", color: "var(--brand-bg-deep)" }}
+          >
+            <Icon name="ChevronLeft" size={20} />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full flex items-center justify-center"
+            style={{ backgroundColor: "var(--brand-gold)", color: "var(--brand-bg-deep)" }}
+          >
+            <Icon name="ChevronRight" size={20} />
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-6">
+          {screenshots.map((_, idx) => (
+            <button
               key={idx}
-              className="rounded-card overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]"
-              style={{ border: "1px solid var(--brand-border)" }}
-              onClick={() => setLightbox(idx)}
-            >
-              <img
-                src={s.url}
-                alt={`Отзыв ${idx + 1}`}
-                className="w-full h-auto object-cover"
-                loading="lazy"
-              />
-            </div>
+              onClick={() => setCurrent(idx)}
+              className="rounded-full transition-all duration-200"
+              style={{
+                width: idx === current ? 24 : 8,
+                height: 8,
+                backgroundColor: idx === current ? "var(--brand-gold)" : "var(--brand-gold-dim)",
+              }}
+            />
           ))}
         </div>
       </div>
