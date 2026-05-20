@@ -116,6 +116,19 @@ export default function Hero() {
               boxShadow: "0 8px 48px 0 rgba(0,0,0,0.45)",
             }}
           >
+            {/* Start date */}
+            <div
+              className="flex flex-col items-center justify-center text-center rounded-card py-5 mb-6"
+              style={{ backgroundColor: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)" }}
+            >
+              <p className="font-body text-sm uppercase tracking-widest mb-1" style={{ color: "var(--brand-muted)" }}>
+                Старт программы
+              </p>
+              <p className="font-display text-4xl md:text-5xl font-bold" style={{ color: "var(--brand-gold)" }}>
+                15 июня
+              </p>
+            </div>
+
             <div className="mb-6">
               <svg viewBox="0 0 280 120" className="w-full" fill="none">
                 <defs>
