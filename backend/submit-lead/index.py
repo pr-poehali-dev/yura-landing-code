@@ -1,11 +1,6 @@
 import json
 import os
 import urllib.request
-import urllib.parse
-import smtplib
-# force redeploy v3
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 
 
 def send_telegram(token: str, chat_id: str, text: str):
@@ -15,30 +10,8 @@ def send_telegram(token: str, chat_id: str, text: str):
     urllib.request.urlopen(req, timeout=10)
 
 
-def send_emails(emails: list, subject: str, body: str):
-    smtp_host = os.environ.get("SMTP_HOST", "smtp.yandex.ru")
-    smtp_port = int(os.environ.get("SMTP_PORT", "587"))
-    smtp_user = os.environ.get("SMTP_USER", "")
-    smtp_pass = os.environ.get("SMTP_PASS", "")
-
-    if not smtp_user or not smtp_pass:
-        return
-
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = subject
-    msg["From"] = smtp_user
-    msg["To"] = ", ".join(emails)
-    msg.attach(MIMEText(body, "html", "utf-8"))
-
-    with smtplib.SMTP(smtp_host, smtp_port) as server:
-        server.ehlo()
-        server.starttls()
-        server.login(smtp_user, smtp_pass)
-        server.sendmail(smtp_user, emails, msg.as_string())
-
-
 def handler(event: dict, context) -> dict:
-    """Принимает заявку с сайта и отправляет уведомления в Telegram и на email."""
+    """Принимает заявку с сайта и отправляет уведомление в Telegram."""
     headers = {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
@@ -57,8 +30,6 @@ def handler(event: dict, context) -> dict:
 
     tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
     tg_chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
-    notify_emails_raw = os.environ.get("NOTIFY_EMAILS", "")
-    notify_emails = [e.strip() for e in notify_emails_raw.split(",") if e.strip()]
 
     tg_text = (
         "📋 <b>Новая заявка с сайта</b>\n\n"
@@ -69,33 +40,11 @@ def handler(event: dict, context) -> dict:
         f"💬 <b>Сообщение:</b> {message or '—'}"
     )
 
-    email_body = f"""
-    <h2>Новая заявка с сайта личные-финансы.рф</h2>
-    <table>
-      <tr><td><b>Имя:</b></td><td>{name}</td></tr>
-      <tr><td><b>Телефон:</b></td><td>{phone}</td></tr>
-      <tr><td><b>Город:</b></td><td>{city or '—'}</td></tr>
-      <tr><td><b>Цель:</b></td><td>{goal}</td></tr>
-      <tr><td><b>Сообщение:</b></td><td>{message or '—'}</td></tr>
-    </table>
-    """
-
-    errors = []
-
     if tg_token and tg_chat_id:
-        try:
-            send_telegram(tg_token, tg_chat_id, tg_text)
-        except Exception as e:
-            errors.append(f"telegram: {e}")
-
-    if notify_emails:
-        try:
-            send_emails(notify_emails, "Новая заявка с сайта личные-финансы.рф", email_body)
-        except Exception as e:
-            errors.append(f"email: {e}")
+        send_telegram(tg_token, tg_chat_id, tg_text)
 
     return {
         "statusCode": 200,
         "headers": headers,
-        "body": json.dumps({"ok": True, "errors": errors}),
+        "body": json.dumps({"ok": True}),
     }
