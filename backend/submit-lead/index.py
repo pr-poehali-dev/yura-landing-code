@@ -3,7 +3,7 @@ import os
 import urllib.request
 import urllib.parse
 import smtplib
-# force redeploy
+# force redeploy v2
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
