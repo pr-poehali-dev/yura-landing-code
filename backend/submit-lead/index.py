@@ -3,6 +3,7 @@ import os
 import urllib.request
 import urllib.parse
 import smtplib
+# force redeploy
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -15,8 +16,8 @@ def send_telegram(token: str, chat_id: str, text: str):
 
 
 def send_emails(emails: list, subject: str, body: str):
-    smtp_host = os.environ.get("SMTP_HOST", "smtp.mail.ru")
-    smtp_port = int(os.environ.get("SMTP_PORT", "465"))
+    smtp_host = os.environ.get("SMTP_HOST", "smtp.yandex.ru")
+    smtp_port = int(os.environ.get("SMTP_PORT", "587"))
     smtp_user = os.environ.get("SMTP_USER", "")
     smtp_pass = os.environ.get("SMTP_PASS", "")
 
@@ -29,7 +30,9 @@ def send_emails(emails: list, subject: str, body: str):
     msg["To"] = ", ".join(emails)
     msg.attach(MIMEText(body, "html", "utf-8"))
 
-    with smtplib.SMTP_SSL(smtp_host, smtp_port) as server:
+    with smtplib.SMTP(smtp_host, smtp_port) as server:
+        server.ehlo()
+        server.starttls()
         server.login(smtp_user, smtp_pass)
         server.sendmail(smtp_user, emails, msg.as_string())
 
