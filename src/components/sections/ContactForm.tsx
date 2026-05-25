@@ -13,14 +13,25 @@ const inputStyle = {
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", phone: "", city: "", goal: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    try {
+      await fetch("https://functions.poehali.dev/2f7641ec-80af-403d-8013-c51939735301", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+    } finally {
+      setLoading(false);
+      setSent(true);
+    }
   };
 
   const fieldClass = "w-full px-4 py-3 rounded-[12px] border font-body text-base transition-colors focus:ring-1";
@@ -146,7 +157,7 @@ export default function ContactForm() {
                   className="w-full py-4 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
                   style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
                 >
-                  Отправить заявку
+                  {loading ? "Отправляем…" : "Отправить заявку"}
                 </button>
               </form>
             )}
