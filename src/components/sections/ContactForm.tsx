@@ -2,6 +2,7 @@ import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const goals = ["Снизить долг", "Начать инвестировать", "Купить жильё", "Планировать пенсию", "Другое"];
+const tariffs = ["Базовый — 12 500 ₽", "Оптимальный — 28 500 ₽", "Премиум — 98 500 ₽"];
 
 const inputStyle = {
   backgroundColor: "var(--brand-surface)",
@@ -11,7 +12,7 @@ const inputStyle = {
 };
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", phone: "", city: "", goal: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", city: "", goal: "", tariff: "", message: "" });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -139,17 +140,18 @@ export default function ContactForm() {
 
                 <div>
                   <label className="block font-body text-sm font-medium mb-1.5" style={{ color: "var(--brand-muted)" }}>
-                    Дополнительно
+                    Выбрать тариф
                   </label>
-                  <textarea
-                    name="message"
-                    value={form.message}
+                  <select
+                    name="tariff"
+                    value={form.tariff}
                     onChange={handleChange}
-                    rows={3}
-                    placeholder="Расскажите о вашей ситуации…"
-                    className={fieldClass + " resize-none"}
+                    className={fieldClass + " appearance-none"}
                     style={inputStyle}
-                  />
+                  >
+                    <option value="">Выберите тариф</option>
+                    {tariffs.map((t) => <option key={t} value={t}>{t}</option>)}
+                  </select>
                 </div>
 
                 <button

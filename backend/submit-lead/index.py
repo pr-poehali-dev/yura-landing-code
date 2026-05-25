@@ -26,7 +26,7 @@ def handler(event: dict, context) -> dict:
     phone = body.get("phone", "")
     city = body.get("city", "")
     goal = body.get("goal", "")
-    message = body.get("message", "")
+    tariff = body.get("tariff", "")
 
     tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
     tg_chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
@@ -37,7 +37,7 @@ def handler(event: dict, context) -> dict:
         f"📞 <b>Телефон:</b> {phone}\n"
         f"🏙 <b>Город:</b> {city or '—'}\n"
         f"🎯 <b>Цель:</b> {goal}\n"
-        f"💬 <b>Сообщение:</b> {message or '—'}"
+        f"💳 <b>Тариф:</b> {tariff or '—'}"
     )
 
     if tg_token and tg_chat_id:
