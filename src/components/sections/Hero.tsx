@@ -1,9 +1,9 @@
 import { IconPiggyBank, IconCoins, IconScale } from "@/components/ui/finance-icons";
 
 const meta = [
-  { value: "3 месяца", label: "Формат", Icon: IconCoins },
-  { value: "3 блока", label: "Блоков", Icon: IconScale },
-  { value: "12 живых занятий онлайн", label: "Сопровождение", Icon: IconPiggyBank },
+  { value: "3 месяца", label: "", Icon: IconCoins },
+  { value: "3 блока", label: "", Icon: IconScale },
+  { value: "12 живых занятий онлайн", label: "", Icon: IconPiggyBank },
 ];
 
 export default function Hero() {
