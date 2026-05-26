@@ -9,18 +9,9 @@ const meta = [
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex flex-col pt-20"
+      className="relative min-h-screen flex items-center pt-20"
       style={{ backgroundColor: "var(--brand-bg)" }}
     >
-      <div className="w-full">
-        <img
-          src="https://cdn.poehali.dev/projects/57473d5e-c74f-44c7-a62d-78a64b94709e/bucket/d7ca1596-a11b-4c89-ac62-7c5c9241bb8c.jpg"
-          alt="Программа создания капитала"
-          className="w-full object-cover"
-          style={{ maxHeight: "480px", objectPosition: "center top" }}
-        />
-      </div>
-
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -29,7 +20,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="container-brand w-full py-12 md:py-16 relative z-10 flex-1">
+      <div className="container-brand w-full py-16 md:py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* left */}
