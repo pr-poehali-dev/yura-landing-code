@@ -6,6 +6,11 @@ const links = [
   { label: "Контакты", href: "#form" },
 ];
 
+const docLinks = [
+  { label: "Договор оферты", href: "/оферта" },
+  { label: "Политика персональных данных", href: "/политика-персональных-данных" },
+];
+
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--brand-black)" }} className="py-12">
@@ -37,12 +42,54 @@ export default function Footer() {
         </div>
 
         <div
-          className="border-t pt-6 flex flex-col md:flex-row items-center justify-between gap-4"
+          className="border-t pt-6 mb-6"
           style={{ borderColor: "rgba(31,53,48,0.8)" }}
         >
-          <p className="font-body text-sm" style={{ color: "rgba(138,170,154,0.3)" }}>
-            © 2026 Программа создания капитала. Все права защищены.
+          <p className="font-body text-sm font-medium mb-3" style={{ color: "rgba(138,170,154,0.5)" }}>
+            ИП Коргун Надежда Сергеевна
           </p>
+          <div className="flex flex-wrap gap-x-6 gap-y-1 font-body text-xs" style={{ color: "rgba(138,170,154,0.35)" }}>
+            <span>ИНН: 253610352292</span>
+            <span>ОГРНИП: 322253600076170</span>
+            <span>Приморский край, г. Владивосток, ул. Нерчинская, д. 38, кв. 5</span>
+            <a href="mailto:finprosto.school@yandex.ru" style={{ color: "rgba(138,170,154,0.35)" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "var(--brand-gold)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "rgba(138,170,154,0.35)")}
+            >
+              finprosto.school@yandex.ru
+            </a>
+            <a href="tel:+79147903386" style={{ color: "rgba(138,170,154,0.35)" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "var(--brand-gold)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "rgba(138,170,154,0.35)")}
+            >
+              +7 914 790-33-86
+            </a>
+          </div>
+        </div>
+
+        <div
+          className="border-t pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+          style={{ borderColor: "rgba(31,53,48,0.8)" }}
+        >
+          <div className="flex flex-col gap-2">
+            <p className="font-body text-sm" style={{ color: "rgba(138,170,154,0.3)" }}>
+              © 2026 Программа создания капитала. Все права защищены.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              {docLinks.map((d) => (
+                <a
+                  key={d.href}
+                  href={d.href}
+                  className="font-body text-xs transition-colors"
+                  style={{ color: "rgba(138,170,154,0.4)" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "var(--brand-gold)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(138,170,154,0.4)")}
+                >
+                  {d.label}
+                </a>
+              ))}
+            </div>
+          </div>
           <a
             href="https://t.me/anastasiya_prus"
             target="_blank"

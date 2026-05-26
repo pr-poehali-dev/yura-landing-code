@@ -13,6 +13,8 @@ const inputStyle = {
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", phone: "", city: "", goal: "", tariff: "", message: "" });
+  const [agreeOferta, setAgreeOferta] = useState(false);
+  const [agreePrivacy, setAgreePrivacy] = useState(false);
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -154,9 +156,43 @@ export default function ContactForm() {
                   </select>
                 </div>
 
+                <div className="space-y-3 pt-1">
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      required
+                      checked={agreeOferta}
+                      onChange={e => setAgreeOferta(e.target.checked)}
+                      className="mt-0.5 flex-shrink-0 w-4 h-4 rounded accent-yellow-500"
+                    />
+                    <span className="font-body text-sm leading-snug" style={{ color: "var(--brand-muted)" }}>
+                      Я ознакомлен(а) и согласен(а) с условиями{" "}
+                      <a href="/оферта" target="_blank" style={{ color: "var(--brand-gold)" }}>
+                        Договора публичной оферты
+                      </a>
+                    </span>
+                  </label>
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      required
+                      checked={agreePrivacy}
+                      onChange={e => setAgreePrivacy(e.target.checked)}
+                      className="mt-0.5 flex-shrink-0 w-4 h-4 rounded accent-yellow-500"
+                    />
+                    <span className="font-body text-sm leading-snug" style={{ color: "var(--brand-muted)" }}>
+                      Я даю согласие на обработку персональных данных в соответствии с{" "}
+                      <a href="/политика-персональных-данных" target="_blank" style={{ color: "var(--brand-gold)" }}>
+                        Политикой конфиденциальности
+                      </a>
+                    </span>
+                  </label>
+                </div>
+
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85"
+                  disabled={!agreeOferta || !agreePrivacy || loading}
+                  className="w-full py-4 rounded-btn text-base font-medium font-body transition-opacity hover:opacity-85 disabled:opacity-40 disabled:cursor-not-allowed"
                   style={{ background: "var(--brand-gold)", color: "var(--brand-black)" }}
                 >
                   {loading ? "Отправляем…" : "Отправить заявку"}
