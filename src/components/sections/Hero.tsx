@@ -9,7 +9,7 @@ const meta = [
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex items-center pt-20"
+      className="relative min-h-screen flex items-center"
       style={{ backgroundColor: "var(--brand-bg)" }}
     >
       <div
