@@ -25,17 +25,6 @@ export default function Hero() {
 
           {/* left */}
           <div className="space-y-8">
-            <div
-              className="inline-flex items-center px-4 py-1.5 rounded-btn text-sm font-medium font-body tracking-wide border"
-              style={{
-                borderColor: "var(--brand-gold-dim)",
-                color: "var(--brand-gold)",
-                backgroundColor: "rgba(201,168,76,0.08)",
-              }}
-            >
-              Программа создания капитала
-            </div>
-
             <div className="space-y-4">
               <h1
                 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]"
