@@ -105,17 +105,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <a
-            href="https://t.me/anastasiya_prus"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-body text-sm transition-colors"
-            style={{ color: "rgba(138,170,154,0.4)" }}
-            onMouseEnter={e => (e.currentTarget.style.color = "var(--brand-gold)")}
-            onMouseLeave={e => (e.currentTarget.style.color = "rgba(138,170,154,0.4)")}
-          >
-            Telegram
-          </a>
+
         </div>
       </div>
     </footer>
