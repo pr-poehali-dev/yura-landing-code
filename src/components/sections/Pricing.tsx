@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Icon from "@/components/ui/icon";
 
 function Countdown() {
-  const deadline = new Date("2026-05-31T23:59:59");
+  const deadline = new Date("2026-06-05T23:59:59");
 
   const calc = () => {
     const diff = deadline.getTime() - Date.now();
@@ -52,7 +52,7 @@ function Countdown() {
 const plans = [
   {
     name: "Базовый",
-    price: "12 500 ₽",
+    price: "13 750 ₽",
     oldPrice: "16 500 ₽",
     description: "Доступ к материалам курса и групповому формату",
     spots: "20 мест",
@@ -66,7 +66,7 @@ const plans = [
   },
   {
     name: "Оптимальный",
-    price: "28 500 ₽",
+    price: "31 500 ₽",
     oldPrice: "37 000 ₽",
     description: "Полное сопровождение с личными консультациями",
     spots: "10 мест",
@@ -125,7 +125,7 @@ export default function Pricing() {
           <div className="flex items-center gap-3 flex-1">
             <Icon name="Clock" size={18} style={{ color: "var(--brand-gold)", flexShrink: 0 }} />
             <p className="font-body text-base" style={{ color: "var(--brand-text)" }}>
-              <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>Цена со скидкой</span> действует при внесении предоплаты до <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>31 мая</span>
+              <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>Цена со скидкой</span> действует при внесении предоплаты до <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>05 июня</span>
             </p>
           </div>
           <Countdown />
