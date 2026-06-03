@@ -6,10 +6,9 @@ function Countdown() {
 
   const calc = () => {
     const diff = deadline.getTime() - Date.now();
-    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    if (diff <= 0) return { hours: 0, minutes: 0, seconds: 0 };
     return {
-      days: Math.floor(diff / 86400000),
-      hours: Math.floor((diff % 86400000) / 3600000),
+      hours: Math.floor(diff / 3600000),
       minutes: Math.floor((diff % 3600000) / 60000),
       seconds: Math.floor((diff % 60000) / 1000),
     };
@@ -27,7 +26,6 @@ function Countdown() {
   return (
     <div className="flex items-center gap-2">
       {[
-        { v: time.days, l: "дней" },
         { v: time.hours, l: "часов" },
         { v: time.minutes, l: "минут" },
         { v: time.seconds, l: "сек" },
@@ -42,7 +40,7 @@ function Countdown() {
             </div>
             <div className="font-body text-[10px] mt-1" style={{ color: "var(--brand-muted)" }}>{l}</div>
           </div>
-          {i < 3 && <span className="font-display text-xl font-bold mb-4" style={{ color: "var(--brand-gold-dim)" }}>:</span>}
+          {i < 2 && <span className="font-display text-xl font-bold mb-4" style={{ color: "var(--brand-gold-dim)" }}>:</span>}
         </div>
       ))}
     </div>
