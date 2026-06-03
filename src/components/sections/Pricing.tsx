@@ -123,7 +123,7 @@ export default function Pricing() {
           <div className="flex items-center gap-3 flex-1">
             <Icon name="Clock" size={18} style={{ color: "var(--brand-gold)", flexShrink: 0 }} />
             <p className="font-body text-base" style={{ color: "var(--brand-text)" }}>
-              <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>Цена со скидкой</span> действует при внесении предоплаты до <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>05 июня</span>
+              <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>Цена со скидкой</span> действует при внесении предоплаты до <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>04 июня</span>
             </p>
           </div>
           <Countdown />
