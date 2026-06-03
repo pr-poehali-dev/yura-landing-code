@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Icon from "@/components/ui/icon";
 
 function Countdown() {
-  const deadline = new Date("2026-06-05T23:59:59");
+  const deadline = new Date(Date.now() + (24 * 60 + 31) * 60 * 1000);
 
   const calc = () => {
     const diff = deadline.getTime() - Date.now();
@@ -66,7 +66,7 @@ const plans = [
   },
   {
     name: "Оптимальный",
-    price: "31 500 ₽",
+    price: "28 500 ₽",
     oldPrice: "37 000 ₽",
     description: "Полное сопровождение с личными консультациями",
     spots: "10 мест",
