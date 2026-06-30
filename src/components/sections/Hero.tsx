@@ -99,7 +99,7 @@ export default function Hero() {
                 Старт программы
               </p>
               <p className="font-display text-4xl md:text-5xl font-bold" style={{ color: "var(--brand-gold)" }}>
-                15 июня
+                15 сентября
               </p>
             </div>
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Icon from "@/components/ui/icon";
 
 function Countdown() {
-  const deadline = new Date("2026-06-10T23:59:59");
+  const deadline = new Date("2026-08-15T23:59:59");
 
   const calc = () => {
     const diff = deadline.getTime() - Date.now();
@@ -115,7 +115,7 @@ export default function Pricing() {
           style={{ borderColor: "rgba(201,168,76,0.3)", color: "var(--brand-text)", backgroundColor: "rgba(201,168,76,0.05)" }}
         >
           <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--brand-gold)" }} />
-          Старт программы — <span style={{ color: "var(--brand-gold)" }}>15 июня</span>
+          Старт программы — <span style={{ color: "var(--brand-gold)" }}>15 сентября</span>
         </div>
 
         <div
@@ -125,7 +125,7 @@ export default function Pricing() {
           <div className="flex items-center gap-3 flex-1">
             <Icon name="Clock" size={18} style={{ color: "var(--brand-gold)", flexShrink: 0 }} />
             <p className="font-body text-base" style={{ color: "var(--brand-text)" }}>
-              <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>Цена со скидкой</span> действует при внесении предоплаты до <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>10 июня</span>
+              <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>Цена со скидкой</span> действует при внесении предоплаты до <span className="font-semibold" style={{ color: "var(--brand-gold)" }}>15 августа</span>
             </p>
           </div>
           <Countdown />
